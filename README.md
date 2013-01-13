@@ -1,0 +1,4 @@
+LyXView
+=======
+
+The project attempts to extract code from LyX to create a portable text editor control.
