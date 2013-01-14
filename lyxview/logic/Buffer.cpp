@@ -11,7 +11,9 @@
 
 #include <lyxview/config.h>
 
-#include "Buffer.h"
+#include <lyxview/logic/Buffer.h>
+#include <lyxview/logic/BufferList.h>
+#include <lyxview/logic/BufferParams.h>
 
 #ifdef	INCLUDE_ORIGINAL
 
@@ -20,8 +22,6 @@
 #include "BiblioInfo.h"
 #include "BranchList.h"
 #include "buffer_funcs.h"
-#include "BufferList.h"
-#include "BufferParams.h"
 #include "Bullet.h"
 #include "Chktex.h"
 #include "Converter.h"
@@ -68,45 +68,50 @@
 #include "WordLangTuple.h"
 #include "WordList.h"
 
-#include "insets/InsetBibtex.h"
-#include "insets/InsetBranch.h"
-#include "insets/InsetInclude.h"
-#include "insets/InsetTabular.h"
-#include "insets/InsetText.h"
+#include <lyxview/insets/InsetBibtex.h>
+#include <lyxview/insets/InsetBranch.h>
+#include <lyxview/insets/InsetInclude.h>
+#include <lyxview/insets/InsetTabular.h>
+#include <lyxview/insets/InsetText.h>
 
-#include "mathed/InsetMathHull.h"
-#include "mathed/MacroTable.h"
-#include "mathed/MathMacroTemplate.h"
-#include "mathed/MathSupport.h"
+#include <lyxview/mathed/InsetMathHull.h>
+#include <lyxview/mathed/MacroTable.h>
+#include <lyxview/mathed/MathMacroTemplate.h>
+#include <lyxview/mathed/MathSupport.h>
 
-#include "graphics/PreviewLoader.h"
+#include <lyxview/graphics/PreviewLoader.h>
 
-#include "frontends/alert.h"
-#include "frontends/Delegates.h"
-#include "frontends/WorkAreaManager.h"
+#include <lyxview/frontends/Delegates.h>
+#include <lyxview/frontends/WorkAreaManager.h>
 
-#include "support/lassert.h"
-#include "support/convert.h"
-#include "support/debug.h"
-#include "support/docstring_list.h"
-#include "support/ExceptionMessage.h"
-#include "support/FileName.h"
-#include "support/FileNameList.h"
-#include "support/filetools.h"
-#include "support/ForkedCalls.h"
-#include "support/gettext.h"
-#include "support/gzstream.h"
-#include "support/lstrings.h"
-#include "support/lyxalgo.h"
-#include "support/os.h"
-#include "support/Package.h"
-#include "support/Path.h"
-#include "support/Systemcall.h"
-#include "support/textutils.h"
-#include "support/types.h"
+#include <lyxview/support/docstring_list.h>
+#include <lyxview/support/ForkedCalls.h>
+#include <lyxview/support/gettext.h>
+#include <lyxview/support/gzstream.h>
+#include <lyxview/support/lstrings.h>
+#include <lyxview/support/lyxalgo.h>
+#include <lyxview/support/Package.h>
+#include <lyxview/support/Path.h>
+#include <lyxview/support/Systemcall.h>
+#include <lyxview/support/textutils.h>
 
-#include "support/bind.h"
-#include "support/shared_ptr.h"
+#include <lyxview/support/bind.h>
+#include <lyxview/support/shared_ptr.h>
+
+#endif	// INCLUDE_ORIGINAL
+
+#include <lyxview/frontends/alert.h>
+
+#include <lyxview/support/lassert.h>
+#include <lyxview/support/convert.h>
+#include <lyxview/support/debug.h>
+#include <lyxview/support/ExceptionMessage.h>
+#include <lyxview/support/FileName.h>
+#include <lyxview/support/FileNameList.h>
+#include <lyxview/support/filetools.h>
+#include <lyxview/support/os.h>
+#include <lyxview/support/types.h>
+
 
 #include <algorithm>
 #include <fstream>
@@ -119,15 +124,19 @@
 
 using namespace std;
 using namespace lyx::support;
+#ifdef	INCLUDE_ORIGINAL
 using namespace lyx::graphics;
+#endif	// INCLUDE_ORIGINAL
 
 namespace lyx {
+#ifdef	INCLUDE_ORIGINAL
 
 namespace Alert = frontend::Alert;
 namespace os = support::os;
 
 namespace {
 
+//oo#ifdef	INCLUDE_ORIGINAL
 int const LYX_FORMAT = LYX_FORMAT_LYX;
 
 typedef map<string, bool> DepClean;
@@ -140,28 +149,36 @@ void showPrintError(string const & name)
 			     makeDisplayPath(name, 50));
 	Alert::error(_("Print document failed"), str);
 }
+//oo#endif	// INCLUDE_ORIGINAL
 
 } // namespace anon
 
 
 // A storehouse for the cloned buffers.
 list<CloneList *> cloned_buffers;
+#endif	// INCLUDE_ORIGINAL
 
 
 class Buffer::Impl
 {
 public:
+#ifdef	INCLUDE_ORIGINAL
+
 	Impl(Buffer * owner, FileName const & file, bool readonly, Buffer const * cloned_buffer);
 
 	~Impl()
 	{
+//oo#ifdef	INCLUDE_ORIGINAL
 		delete preview_loader_;
 		if (wa_) {
 			wa_->closeAll();
 			delete wa_;
 		}
 		delete inset;
+//oo#endif	// INCLUDE_ORIGINAL
 	}
+
+//oo#ifdef	INCLUDE_ORIGINAL
 
 	/// search for macro in local (buffer) table or in children
 	MacroData const * getBufferMacro(docstring const & name,
@@ -179,14 +196,19 @@ public:
 	support::FileName exportFileName() const;
 
 	Buffer * owner_;
+#endif	// INCLUDE_ORIGINAL
 
 	BufferParams params;
+
+#ifdef	INCLUDE_ORIGINAL
+
 	LyXVC lyxvc;
 	FileName temppath;
 	mutable TexRow texrow;
 
 	/// need to regenerate .tex?
 	DepClean dep_clean;
+#endif	// INCLUDE_ORIGINAL
 
 	/// is save needed?
 	mutable bool lyx_clean;
@@ -209,6 +231,7 @@ public:
 	 */
 	bool file_fully_loaded;
 
+#ifdef	INCLUDE_ORIGINAL
 	///
 	mutable TocBackend toc_backend;
 
@@ -303,10 +326,12 @@ public:
 			parent_buffer->invalidateBibinfoCache();
 		}
 	}
+#endif	// INCLUDE_ORIGINAL
 
 	/// If non zero, this buffer is a clone of existing buffer \p cloned_buffer_
 	/// This one is useful for preview detached in a thread.
 	Buffer const * cloned_buffer_;
+#ifdef	INCLUDE_ORIGINAL
 	///
 	CloneList * clone_list_;
 	/// are we in the process of exporting this buffer?
@@ -331,9 +356,11 @@ private:
 	int word_count_;
 	int char_count_;
 	int blank_count_;
+#endif	// INCLUDE_ORIGINAL
 
 };
 
+#ifdef	INCLUDE_ORIGINAL
 
 /// Creates the per buffer temporary directory
 static FileName createBufferTmpDir()
@@ -352,10 +379,13 @@ static FileName createBufferTmpDir()
 	}
 	return tmpfl;
 }
+//oo#endif	// INCLUDE_ORIGINAL
 
 
 Buffer::Impl::Impl(Buffer * owner, FileName const & file, bool readonly_,
 	Buffer const * cloned_buffer)
+//oo#ifdef	INCLUDE_ORIGINAL
+
 	: owner_(owner), lyx_clean(true), bak_clean(true), unnamed(false),
 	  read_only(readonly_), filename(file), file_fully_loaded(false),
 	  toc_backend(owner), macro_lock(false), timestamp_(0), checksum_(0),
@@ -548,6 +578,7 @@ Buffer * Buffer::cloneBufferOnly() const {
 	buffer_clone->d->children_positions.clear();
 	return buffer_clone;
 }
+#endif	// INCLUDE_ORIGINAL
 
 
 bool Buffer::isClone() const
@@ -558,10 +589,14 @@ bool Buffer::isClone() const
 
 void Buffer::changed(bool update_metrics) const
 {
+#ifdef	INCLUDE_ORIGINAL
 	if (d->wa_)
 		d->wa_->redrawAll(update_metrics);
+#endif	// INCLUDE_ORIGINAL
+
 }
 
+#ifdef	INCLUDE_ORIGINAL
 
 frontend::WorkAreaManager & Buffer::workAreaManager() const
 {
@@ -581,6 +616,7 @@ Inset & Buffer::inset() const
 	return *d->inset;
 }
 
+#endif	// INCLUDE_ORIGINAL
 
 BufferParams & Buffer::params()
 {
@@ -593,6 +629,7 @@ BufferParams const & Buffer::params() const
 	return d->params;
 }
 
+#ifdef	INCLUDE_ORIGINAL
 
 ParagraphList & Buffer::paragraphs()
 {
@@ -733,6 +770,7 @@ string Buffer::logName(LogType * type) const
 	return fname.absFileName();
 }
 
+#endif	// INCLUDE_ORIGINAL
 
 void Buffer::setReadonly(bool const flag)
 {
@@ -741,6 +779,7 @@ void Buffer::setReadonly(bool const flag)
 		changed(false);
 	}
 }
+#ifdef	INCLUDE_ORIGINAL
 
 
 void Buffer::setFileName(FileName const & fname)
@@ -2658,6 +2697,7 @@ bool Buffer::isUnnamed() const
 {
 	return d->unnamed;
 }
+#endif	// INCLUDE_ORIGINAL
 
 
 /// \note
@@ -2673,6 +2713,7 @@ bool Buffer::isInternal() const
 
 void Buffer::markDirty()
 {
+#ifdef	INCLUDE_ORIGINAL
 	if (d->lyx_clean) {
 		d->lyx_clean = false;
 		updateTitles();
@@ -2684,6 +2725,7 @@ void Buffer::markDirty()
 
 	for (; it != end; ++it)
 		it->second = false;
+#endif	// INCLUDE_ORIGINAL
 }
 
 
@@ -2709,6 +2751,8 @@ bool Buffer::isReadonly() const
 {
 	return d->read_only;
 }
+
+#ifdef	INCLUDE_ORIGINAL
 
 
 void Buffer::setParent(Buffer const * buffer)
@@ -4621,5 +4665,5 @@ void Buffer::checkChildBuffers()
 	d->position_to_children.clear();
 }
 
-} // namespace lyx
 #endif	// INCLUDE_ORIGINAL
+} // namespace lyx

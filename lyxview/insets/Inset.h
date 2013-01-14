@@ -28,6 +28,7 @@
 namespace lyx {
 
 class Buffer;
+class InsetLayout;
 
 #ifdef	INCLUDE_ORIGINAL
 class BiblioInfo;
@@ -43,7 +44,6 @@ class FuncStatus;
 class InsetCollapsable;
 class InsetCommand;
 class InsetIterator;
-class InsetLayout;
 class InsetList;
 class InsetMath;
 class InsetTabular;
@@ -116,7 +116,6 @@ public:
 	/// retrieve associated Buffer
 	virtual Buffer & buffer();
 	virtual Buffer const & buffer() const;
-#ifdef	INCLUDE_ORIGINAL
 	/// Returns true if buffer_ actually points to a Buffer that has
 	/// been loaded into LyX and is still open. Note that this will
 	/// always return false for cloned Buffers. If you want to allow
@@ -124,6 +123,7 @@ public:
 	bool isBufferLoaded() const;
 	/// Returns true if this is a loaded buffer or a cloned buffer.
 	bool isBufferValid() const;
+#ifdef	INCLUDE_ORIGINAL
 
 	/// initialize view for this inset.
 	/**
@@ -226,9 +226,11 @@ public:
 	/// get the screen positions of the cursor (see note in Cursor.cpp)
 	virtual void cursorPos(BufferView const & bv,
 		CursorSlice const & sl, bool boundary, int & x, int & y) const;
+#endif	// INCLUDE_ORIGINAL
 
 	/// Allow multiple blanks
 	virtual bool isFreeSpacing() const;
+#ifdef	INCLUDE_ORIGINAL
 	/// Don't eliminate empty paragraphs
 	virtual bool allowEmpty() const;
 	/// Force inset into LTR environment if surroundings are RTL
@@ -421,10 +423,14 @@ public:
 	/// This default implementation returns an empty string.
 	virtual std::string contextMenuName() const;
 
+#endif	// INCLUDE_ORIGINAL
 
 	virtual docstring layoutName() const;
+
+
 	///
 	virtual InsetLayout const & getLayout() const;
+#ifdef	INCLUDE_ORIGINAL
 	/// Is this inset's layout defined in the document's textclass?
 	bool undefined() const;
 	/// should this inset be handled like a normal character?

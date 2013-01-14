@@ -19,18 +19,23 @@
 #include "Inset.h"
 
 #include <lyxview/logic/Buffer.h>
+#include <lyxview/logic/BufferList.h>
+#include <lyxview/logic/BufferParams.h>
+
+#include <lyxview/insets/InsetLayout.h>
 
 #include <lyxview/support/docstream.h>
 #include <lyxview/support/debug.h>
 #include <lyxview/support/lassert.h>
 #include <lyxview/support/ExceptionMessage.h>
 
+#include <lyxview/logic/TextClass.h>
+
+
 #ifdef	INCLUDE_ORIGINAL
 
 
 #include "buffer_funcs.h"
-#include "BufferList.h"
-#include "BufferParams.h"
 #include "BufferView.h"
 #include "CoordCache.h"
 #include "Cursor.h"
@@ -41,17 +46,16 @@
 #include "MetricsInfo.h"
 #include "output_xhtml.h"
 #include "Text.h"
-#include "TextClass.h"
 
 #include "frontends/Application.h"
 #include "frontends/Painter.h"
 
 #include "support/gettext.h"
+#endif	// INCLUDE_ORIGINAL
 
 #include <map>
 
 
-#endif	// INCLUDE_ORIGINAL
 
 using namespace std;
 using namespace lyx::support;
@@ -217,7 +221,6 @@ Buffer const & Inset::buffer() const
 	return const_cast<Inset *>(this)->buffer();
 }
 
-#ifdef	INCLUDE_ORIGINAL
 
 
 bool Inset::isBufferLoaded() const
@@ -225,12 +228,12 @@ bool Inset::isBufferLoaded() const
 	return buffer_ && theBufferList().isLoaded(buffer_);
 }
 
-
 bool Inset::isBufferValid() const
 {
 	return buffer_ 
 		&& (isBufferLoaded() || buffer_->isClone());
 }
+
 
 
 docstring Inset::layoutName() const
@@ -244,6 +247,7 @@ bool Inset::isFreeSpacing() const
 	return getLayout().isFreeSpacing();
 }
 
+#ifdef	INCLUDE_ORIGINAL
 
 bool Inset::allowEmpty() const
 {
@@ -589,6 +593,7 @@ bool Inset::covers(BufferView const & bv, int x, int y) const
 	return bv.coordCache().getInsets().covers(this, x, y);
 }
 
+#endif	// INCLUDE_ORIGINAL
 
 InsetLayout const & Inset::getLayout() const
 {
@@ -596,6 +601,7 @@ InsetLayout const & Inset::getLayout() const
 		return DocumentClass::plainInsetLayout();
 	return buffer().params().documentClass().insetLayout(layoutName());
 }
+#ifdef	INCLUDE_ORIGINAL
 
 
 bool Inset::undefined() const

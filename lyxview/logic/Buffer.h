@@ -36,12 +36,12 @@ namespace lyx {
 
 class Inset;
 
+class BufferParams;
 
 #ifdef	INCLUDE_ORIGINAL
 
 class BiblioInfo;
 class BibTeXInfo;
-class BufferParams;
 class DispatchResult;
 class DocIterator;
 class docstring_list;
@@ -76,10 +76,6 @@ class GuiBufferDelegate;
 class WorkAreaManager;
 }
 
-namespace support {
-class FileName;
-class FileNameList;
-}
 
 namespace graphics {
 class PreviewLoader;
@@ -87,6 +83,10 @@ class PreviewLoader;
 
 #endif	// INCLUDE_ORIGINAL
 
+namespace support {
+class FileName;
+class FileNameList;
+}
 
 
 class Buffer;
@@ -174,7 +174,6 @@ public:
 	};
 
 
-#ifdef	INCLUDE_ORIGINAL
 
 	/// Constructor
 	explicit Buffer(std::string const & file, bool readonly = false,
@@ -182,14 +181,18 @@ public:
 
 	/// Destructor
 	~Buffer();
+#ifdef	INCLUDE_ORIGINAL
 
 	/// Clones the entire structure of which this Buffer is part, starting
 	/// with the master and cloning all the children, too.
 	Buffer * cloneFromMaster() const;
 	/// Just clones this single Buffer. For autosave.
 	Buffer * cloneBufferOnly() const;
+#endif	// INCLUDE_ORIGINAL
+
 	///
 	bool isClone() const;
+#ifdef	INCLUDE_ORIGINAL
 
 	/** High-level interface to buffer functionality.
 	    This function parses a command string and executes it.
@@ -385,6 +388,7 @@ public:
 
 	/// Whether or not a filename has been assigned to this buffer
 	bool isUnnamed() const;
+#endif	// INCLUDE_ORIGINAL
 
 	/// Whether or not this buffer is internal.
 	///
@@ -392,6 +396,7 @@ public:
 	/// It is not associated with a filename, it is never saved, thus it does not need to be
 	/// automatically saved, nor it needs to trigger any "do you want to save ?" question.
 	bool isInternal() const;
+
 
 	/// Mark this buffer as dirty.
 	void markDirty();
@@ -406,6 +411,7 @@ public:
 	/// It is always an absolute path.
 	std::string filePath() const;
 
+#ifdef	INCLUDE_ORIGINAL
 	/** A transformed version of the file name, adequate for LaTeX.
 	    \param no_path optional if \c true then the path is stripped.
 	*/
@@ -446,12 +452,15 @@ public:
 	/// This is "stable", too, in the sense that it returns the same
 	/// thing from whichever Buffer it is called.
 	ListOfBuffers allRelatives() const;
+#endif	// INCLUDE_ORIGINAL
 
 	/// Is buffer read-only?
 	bool isReadonly() const;
 
 	/// Set buffer read-only flag
 	void setReadonly(bool flag = true);
+
+#ifdef	INCLUDE_ORIGINAL
 
 	/** Validate a buffer for LaTeX.
 	    This validates the buffer, and returns a struct for use by
@@ -512,10 +521,13 @@ public:
 	bool isMultiLingual() const;
 	///
 	std::set<Language const *> getLanguages() const;
+#endif	// INCLUDE_ORIGINAL
 
 	///
 	BufferParams & params();
 	BufferParams const & params() const;
+
+#ifdef	INCLUDE_ORIGINAL
 
 	/** The list of paragraphs.
 	    This is a linked list of paragraph, this list holds the
@@ -617,9 +629,11 @@ public:
 
 	///
 	Undo & undo();
+#endif	// INCLUDE_ORIGINAL
 
 	/// This function is called when the buffer is changed.
 	void changed(bool update_metrics) const;
+#ifdef	INCLUDE_ORIGINAL
 	///
 	void setChild(DocIterator const & dit, Buffer * child);
 	///
@@ -741,12 +755,12 @@ private:
 	/// noncopyable
 	Buffer(Buffer const &);
 	void operator=(Buffer const &);
+#endif	// INCLUDE_ORIGINAL
 
 	/// Use the Pimpl idiom to hide the internals.
 	class Impl;
 	/// The pointer never changes although *pimpl_'s contents may.
 	Impl * const d;
-#endif	// INCLUDE_ORIGINAL
 
 };
 
