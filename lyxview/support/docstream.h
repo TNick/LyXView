@@ -13,7 +13,7 @@
 #define LYX_DOCSTREAM_H
 
 #ifdef	INCLUDE_ORIGINAL
-#include "TexRow.h"
+#include <lyxview/logic/TexRow.h>
 #endif	// INCLUDE_ORIGINAL
 #include <lyxview/support/docstring.h>
 
@@ -21,7 +21,7 @@
 // Ugly workaround for MSVC10 STL bug:
 // std::numpunct has a hardcoded dllimport in definition, but we wanna it with 32 bit 
 // so we can't import it and must define it but then the compiler complains.
-#include "support/numpunct_lyx_char_type.h"
+#include <lyxview/support/numpunct_lyx_char_type.h>
 #endif
 
 #include <fstream>

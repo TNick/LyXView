@@ -20,12 +20,12 @@
 #include "Citation.h"
 #include "Format.h"
 #include "LayoutModuleList.h"
-#include "OutputParams.h"
+#include <lyxview/output/OutputParams.h>
 #include "paper.h"
 
-#include "insets/InsetQuotes.h"
+#include <lyxview/insets/InsetQuotes.h>
 
-#include "support/copied_ptr.h"
+#include <lyxview/support/copied_ptr.h>
 #endif	// INCLUDE_ORIGINAL
 
 #include <map>

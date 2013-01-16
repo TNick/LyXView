@@ -18,8 +18,8 @@
 #include <lyxview/support/FileName.h>
 
 #ifdef	INCLUDE_ORIGINAL
-#include "support/gettext.h"
-#include "support/ProgressInterface.h"
+#include <lyxview/support/gettext.h>
+#include <lyxview/support/ProgressInterface.h>
 #endif	// INCLUDE_ORIGINAL
 
 #include <iostream>

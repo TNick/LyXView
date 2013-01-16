@@ -13,7 +13,7 @@
 #include <lyxview/config.h>
 
 #ifdef	INCLUDE_ORIGINAL
-#include "LyXRC.h"
+#include <lyxview/logic/LyXRC.h>
 #endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/os.h>

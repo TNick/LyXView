@@ -16,7 +16,7 @@
 
 #include <lyxview/support/convert.h>
 #ifdef	INCLUDE_ORIGINAL
-#include "support/gettext.h"
+#include <lyxview/support/gettext.h>
 #endif	// INCLUDE_ORIGINAL
 #include <lyxview/support/qstring_helpers.h>
 #include <lyxview/support/textutils.h>

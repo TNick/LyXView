@@ -13,15 +13,15 @@
 #include <lyxview/config.h>
 
 #ifdef	INCLUDE_ORIGINAL
-#include "Encoding.h"
-#include "Language.h"
+#include <lyxview/logic/Encoding.h>
+#include <lyxview/logic/Language.h>
 #include "Lexer.h"
 #include "output_xhtml.h"
 #endif	// INCLUDE_ORIGINAL
 
-#include "Layout.h"
+#include <lyxview/logic/Layout.h>
 #include "FontInfo.h"
-#include "TextClass.h"
+#include <lyxview/text/TextClass.h>
 
 #include <lyxview/support/debug.h>
 #include <lyxview/support/lassert.h>

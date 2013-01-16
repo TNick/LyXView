@@ -15,30 +15,30 @@
 
 #include <lyxview/config.h>
 
-#include "BufferParams.h"
+#include <lyxview/logic/BufferParams.h>
 
 #ifdef	INCLUDE_ORIGINAL
 
 #include "Author.h"
 #include "LayoutFile.h"
 #include "BranchList.h"
-#include "buffer_funcs.h"
+#include <lyxview/logic/buffer_funcs.h>
 #include "Bullet.h"
 #include "Color.h"
 #include "ColorSet.h"
 #include "Converter.h"
-#include "Encoding.h"
+#include <lyxview/logic/Encoding.h>
 #include "HSpace.h"
 #include "IndicesList.h"
-#include "Language.h"
+#include <lyxview/logic/Language.h>
 #include "LaTeXFeatures.h"
 #include "ModuleList.h"
-#include "Font.h"
+#include <lyxview/logic/Font.h>
 #include "Lexer.h"
-#include "LyXRC.h"
-#include "OutputParams.h"
+#include <lyxview/logic/LyXRC.h>
+#include <lyxview/output/OutputParams.h>
 #include "Spacing.h"
-#include "TexRow.h"
+#include <lyxview/logic/TexRow.h>
 #include "VSpace.h"
 #include "PDFOptions.h"
 

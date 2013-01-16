@@ -11,7 +11,7 @@
 #ifndef FONT_LIST_H
 #define FONT_LIST_H
 
-#include "Font.h"
+#include <lyxview/logic/Font.h>
 
 #include <lyxview/support/types.h>
 

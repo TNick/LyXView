@@ -16,7 +16,7 @@
 
 #ifdef	INCLUDE_ORIGINAL
 
-#include "Encoding.h"
+#include <lyxview/logic/Encoding.h>
 #include "Spacing.h"
 
 #endif	// INCLUDE_ORIGINAL

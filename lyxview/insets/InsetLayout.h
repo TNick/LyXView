@@ -142,7 +142,6 @@ public:
 #endif	// INCLUDE_ORIGINAL
 	///
 	bool isFreeSpacing() const { return freespacing_; }
-#ifdef	INCLUDE_ORIGINAL
 	///
 	bool isKeepEmpty() const { return keepempty_; }
 	///
@@ -155,6 +154,7 @@ public:
 	bool resetsFont() const { return resetsfont_; }
 	///
 	bool isDisplay() const { return display_; }
+#ifdef	INCLUDE_ORIGINAL
 private:
 	///
 	void makeDefaultCSS() const;
@@ -233,7 +233,6 @@ private:
 
 	///
 	bool freespacing_;
-#ifdef	INCLUDE_ORIGINAL
 	///
 	bool keepempty_;
 	///
@@ -248,7 +247,6 @@ private:
 	bool resetsfont_;
 	///
 	bool display_;
-#endif	// INCLUDE_ORIGINAL
 
 };
 

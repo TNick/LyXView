@@ -13,18 +13,20 @@
  * Various OS specific functions
  */
 
-#include <config.h>
+#include <lyxview/config.h>
 
-#include "LyXRC.h"
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/LyXRC.h>
+#endif	// INCLUDE_ORIGINAL
 
-#include "support/os.h"
+#include <lyxview/support/os.h>
 
-#include "support/debug.h"
-#include "support/environment.h"
-#include "support/FileName.h"
-#include "support/filetools.h"
-#include "support/lassert.h"
-#include "support/lstrings.h"
+#include <lyxview/support/debug.h>
+#include <lyxview/support/environment.h>
+#include <lyxview/support/FileName.h>
+#include <lyxview/support/filetools.h>
+#include <lyxview/support/lassert.h>
+#include <lyxview/support/lstrings.h>
 
 #include <windows.h>
 #include <io.h>

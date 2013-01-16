@@ -20,7 +20,7 @@
 #include "Author.h"
 #include "Session.h"
 #include "output_latex.h"
-#include "ParagraphList.h"
+#include <lyxview/para/ParagraphList.h>
 
 
 #include <lyxview/support/gettext.h>

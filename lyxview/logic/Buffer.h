@@ -16,9 +16,9 @@
 #ifdef	INCLUDE_ORIGINAL
 
 #include "OutputEnums.h"
-#include "OutputParams.h"
+#include <lyxview/output/OutputParams.h>
 
-#include "insets/InsetCode.h"
+#include <lyxview/insets/InsetCode.h>
 
 #endif	// INCLUDE_ORIGINAL
 

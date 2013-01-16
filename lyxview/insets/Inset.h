@@ -16,47 +16,45 @@
 #define INSETBASE_H
 
 #include "InsetCode.h"
-#ifdef	INCLUDE_ORIGINAL
-#include "ColorCode.h"
-#include "LayoutEnums.h"
-#include "OutputEnums.h"
-#endif	// INCLUDE_ORIGINAL
+#include <lyxview/logic/ColorCode.h>
+#include <lyxview/logic/LayoutEnums.h>
+#include <lyxview/output/OutputEnums.h>
 
-#include "lyxview/support/strfwd.h"
-#include "lyxview/support/types.h"
+#include <lyxview/support/strfwd.h>
+#include <lyxview/support/types.h>
 
 namespace lyx {
 
 class Buffer;
 class InsetLayout;
 
-#ifdef	INCLUDE_ORIGINAL
-class BiblioInfo;
 class BufferView;
-class Change;
-class CompletionList;
-class Cursor;
-class CursorSlice;
 class Dimension;
+class InsetMath;
+class Text;
+class CursorSlice;
 class DocIterator;
-class FuncRequest;
-class FuncStatus;
 class InsetCollapsable;
 class InsetCommand;
-class InsetIterator;
-class InsetList;
-class InsetMath;
 class InsetTabular;
 class InsetText;
-class LaTeXFeatures;
-class Lexer;
-class MathAtom;
-class MetricsInfo;
-class OutputParams;
+class InsetIterator;
+class InsetList;
+class Change;
 class PainterInfo;
+class MetricsInfo;
 class ParConstIterator;
 class ParIterator;
-class Text;
+class Cursor;
+class FuncRequest;
+class FuncStatus;
+class MathAtom;
+class OutputParams;
+#ifdef	INCLUDE_ORIGINAL
+class BiblioInfo;
+class CompletionList;
+class LaTeXFeatures;
+class Lexer;
 class TocList;
 class XHTMLStream;
 class otexstream;
@@ -74,9 +72,9 @@ std::string insetName(InsetCode);
 /// returns the Inset name corresponding to the \c InsetCode.
 /// Eg, insetDisplayName(BRANCH_CODE) == _("Branch")
 docstring insetDisplayName(InsetCode);
+#endif	// INCLUDE_ORIGINAL
 ///
 static int const TOC_ENTRY_LENGTH = 40;
-#endif	// INCLUDE_ORIGINAL
 
 /// Common base class to all insets
 
@@ -123,7 +121,7 @@ public:
 	bool isBufferLoaded() const;
 	/// Returns true if this is a loaded buffer or a cloned buffer.
 	bool isBufferValid() const;
-#ifdef	INCLUDE_ORIGINAL
+
 
 	/// initialize view for this inset.
 	/**
@@ -131,7 +129,7 @@ public:
 	  * Intented purpose is to sanitize internal state with regard to current
 	  * Buffer. 
 	  **/
-	virtual void initView() {};
+	virtual void initView() {}
 	/// \return true if this inset is labeled.
 	virtual bool isLabeled() const { return false; }
 
@@ -157,6 +155,7 @@ public:
 	virtual InsetCommand * asInsetCommand() { return 0; }
 	/// is this inset based on the InsetCommand class?
 	virtual InsetCommand const * asInsetCommand() const { return 0; }
+#ifdef	INCLUDE_ORIGINAL
 
 	/// the real dispatcher
 	void dispatch(Cursor & cur, FuncRequest & cmd);
@@ -230,7 +229,6 @@ public:
 
 	/// Allow multiple blanks
 	virtual bool isFreeSpacing() const;
-#ifdef	INCLUDE_ORIGINAL
 	/// Don't eliminate empty paragraphs
 	virtual bool allowEmpty() const;
 	/// Force inset into LTR environment if surroundings are RTL
@@ -238,6 +236,7 @@ public:
 	/// whether to include this inset in the strings generated for the TOC
 	virtual bool isInToc() const;
 
+#ifdef	INCLUDE_ORIGINAL
 	/// Where should we go when we press the up or down cursor key?
 	virtual bool idxUpDown(Cursor & cur, bool up) const;
 	/// Move one cell backwards
@@ -273,12 +272,14 @@ public:
 	virtual int cellXOffset(idx_type) const { return 0; }
 	/// any additional y-offset when drawing a cell?
 	virtual int cellYOffset(idx_type) const { return 0; }
+#endif	// INCLUDE_ORIGINAL
 	/// number of embedded cells
 	virtual size_t nargs() const { return 0; }
 	/// number of rows in gridlike structures
 	virtual size_t nrows() const { return 0; }
 	/// number of columns in gridlike structures
 	virtual size_t ncols() const { return 0; }
+#ifdef	INCLUDE_ORIGINAL
 	/// Is called when the cursor leaves this inset.
 	/// Returns true if cursor is now invalid, e.g. if former 
 	/// insets in higher cursor slices of \c old do not exist 
@@ -336,6 +337,7 @@ public:
 	/// This one should be called when you want the whole contents of
 	/// the inset.
 	virtual void toString(odocstream &) const {}
+#endif	// INCLUDE_ORIGINAL
 	/// Appends a potentially abbreviated version of the inset to
 	/// \param str. Intended for use by the TOC.
 	virtual void forToc(docstring & str,
@@ -361,6 +363,7 @@ public:
 	/// return true if the inset should be removed automatically
 	virtual bool autoDelete() const;
 
+#ifdef	INCLUDE_ORIGINAL
 	/// Returns true if the inset supports completions.
 	virtual bool completionSupported(Cursor const &) const { return false; }
 	/// Returns true if the inset supports inline completions at the
@@ -411,6 +414,7 @@ public:
 	/// Is the content of this inset part of the output document?
 	virtual bool producesOutput() const { return true; }
 
+#endif	// INCLUDE_ORIGINAL
 	/// \return Tool tip for this inset.
 	/// This default implementation returns an empty string.
 	virtual docstring toolTip(BufferView const & bv, int x, int y) const;
@@ -423,14 +427,12 @@ public:
 	/// This default implementation returns an empty string.
 	virtual std::string contextMenuName() const;
 
-#endif	// INCLUDE_ORIGINAL
 
 	virtual docstring layoutName() const;
 
 
 	///
 	virtual InsetLayout const & getLayout() const;
-#ifdef	INCLUDE_ORIGINAL
 	/// Is this inset's layout defined in the document's textclass?
 	bool undefined() const;
 	/// should this inset be handled like a normal character?
@@ -460,6 +462,7 @@ public:
 	virtual bool isLineSeparator() const { return false; }
 	/// should paragraph indendation be ommitted in any case?
 	virtual bool neverIndent() const { return false; }
+#ifdef	INCLUDE_ORIGINAL
 	/// dumps content to lyxerr
 	virtual void dump() const;
 	/// write inset in .lyx format
@@ -474,12 +477,14 @@ public:
 	virtual void latex(otexstream &, OutputParams const &) const {}
 	/// returns true to override begin and end inset in file
 	virtual bool directWrite() const;
+#endif	// INCLUDE_ORIGINAL
 	///
 	virtual bool allowSpellCheck() const { return false; }
 
 	/// if this insets owns text cells (e.g. InsetText) return cell num
 	virtual Text * getText(int /*num*/) const { return 0; }
 
+#ifdef	INCLUDE_ORIGINAL
 	/** Adds a LaTeX snippet to the Preview Loader for transformation
 	 *  into a bitmap image. Does not start the laoding process.
 	 *
@@ -516,8 +521,6 @@ public:
 public:
 	/// returns LyX code associated with the inset. Used for TOC, ...)
 	virtual InsetCode lyxCode() const { return NO_CODE; }
-
-#ifdef	INCLUDE_ORIGINAL
 
 	/// -1: text mode, 1: math mode, 0 undecided
 	enum mode_type {UNDECIDED_MODE, TEXT_MODE, MATH_MODE};
@@ -592,7 +595,6 @@ protected:
 	 *  \sa getStatus
 	 */
 	virtual void doDispatch(Cursor & cur, FuncRequest & cmd);
-#endif	// INCLUDE_ORIGINAL
 
 	Buffer * buffer_;
 

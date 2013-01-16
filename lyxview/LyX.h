@@ -14,7 +14,7 @@
 #ifndef LYX_H
 #define LYX_H
 
-#include "support/strfwd.h"
+#include <lyxview/support/strfwd.h>
 
 #include <vector>
 

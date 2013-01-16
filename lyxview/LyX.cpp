@@ -21,6 +21,8 @@
 
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/BufferList.h>
+#include <lyxview/logic/Language.h>
+#include <lyxview/func/FuncStatus.h>
 
 #ifdef	INCLUDE_ORIGINAL
 #include "AppleSpellChecker.h"
@@ -31,18 +33,16 @@
 #include "Converter.h"
 #include "CutAndPaste.h"
 #include "EnchantChecker.h"
-#include "Encoding.h"
+#include <lyxview/logic/Encoding.h>
 #include "ErrorList.h"
 #include "Format.h"
-#include "FuncStatus.h"
 #include "HunspellChecker.h"
 #include "KeyMap.h"
-#include "Language.h"
 #include "LayoutFile.h"
 #include "Lexer.h"
 #include "LyX.h"
 #include "LyXAction.h"
-#include "LyXRC.h"
+#include <lyxview/logic/LyXRC.h>
 #include "ModuleList.h"
 #include "Mover.h"
 #include "Server.h"
@@ -50,8 +50,8 @@
 #include "Session.h"
 #include "WordList.h"
 
-#include "frontends/alert.h"
-#include "frontends/Application.h"
+#include <lyxview/frontends/alert.h>
+#include <lyxview/frontends/Application.h>
 #endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/lassert.h>
@@ -62,15 +62,15 @@
 
 #ifdef	INCLUDE_ORIGINAL
 
-#include "support/ExceptionMessage.h"
-#include "support/filetools.h"
-#include "support/gettext.h"
-#include "support/Messages.h"
-#include "support/Package.h"
-#include "support/Path.h"
-#include "support/Systemcall.h"
+#include <lyxview/support/ExceptionMessage.h>
+#include <lyxview/support/filetools.h>
+#include <lyxview/support/gettext.h>
+#include <lyxview/support/Messages.h>
+#include <lyxview/support/Package.h>
+#include <lyxview/support/Path.h>
+#include <lyxview/support/Systemcall.h>
 
-#include "support/bind.h"
+#include <lyxview/support/bind.h>
 #endif	// INCLUDE_ORIGINAL
 
 #include <boost/scoped_ptr.hpp>

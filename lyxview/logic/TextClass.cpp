@@ -14,14 +14,14 @@
 
 #include <lyxview/config.h>
 
-#include "TextClass.h"
+#include <lyxview/text/TextClass.h>
 
-#include "Layout.h"
+#include <lyxview/logic/Layout.h>
 
 #ifdef	INCLUDE_ORIGINAL
 
 #include "LayoutFile.h"
-#include "Counters.h"
+#include <lyxview/logic/Counters.h>
 #include "Floating.h"
 #include "FloatList.h"
 #include "Lexer.h"
@@ -32,7 +32,7 @@
 #endif	// INCLUDE_ORIGINAL
 
 #include "Color.h"
-#include "Font.h"
+#include <lyxview/logic/Font.h>
 
 
 #include <lyxview/frontends/alert.h>

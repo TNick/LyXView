@@ -18,7 +18,7 @@
 
 #include "ColorSet.h"
 #include "Lexer.h"
-#include "TextClass.h"
+#include <lyxview/text/TextClass.h>
 
 #endif	// INCLUDE_ORIGINAL
 

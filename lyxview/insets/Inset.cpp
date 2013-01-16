@@ -30,27 +30,25 @@
 #include <lyxview/support/ExceptionMessage.h>
 
 #include <lyxview/logic/TextClass.h>
+#include <lyxview/logic/Dimension.h>
+#include <lyxview/logic/CoordCache.h>
 
+#include <lyxview/view/BufferView.h>
+#include <lyxview/metrics/MetricsInfo.h>
+#include <lyxview/func/FuncRequest.h>
+#include <lyxview/func/FuncStatus.h>
+#include <lyxview/logic/Cursor.h>
+#include <lyxview/text/Text.h>
 
 #ifdef	INCLUDE_ORIGINAL
-
-
-#include "buffer_funcs.h"
-#include "BufferView.h"
-#include "CoordCache.h"
-#include "Cursor.h"
-#include "Dimension.h"
+#include <lyxview/logic/buffer_funcs.h>
 #include "DispatchResult.h"
-#include "FuncRequest.h"
-#include "FuncStatus.h"
-#include "MetricsInfo.h"
 #include "output_xhtml.h"
-#include "Text.h"
 
-#include "frontends/Application.h"
-#include "frontends/Painter.h"
+#include <lyxview/frontends/Application.h>
+#include <lyxview/frontends/Painter.h>
 
-#include "support/gettext.h"
+#include <lyxview/support/gettext.h>
 #endif	// INCLUDE_ORIGINAL
 
 #include <map>
@@ -247,7 +245,6 @@ bool Inset::isFreeSpacing() const
 	return getLayout().isFreeSpacing();
 }
 
-#ifdef	INCLUDE_ORIGINAL
 
 bool Inset::allowEmpty() const
 {
@@ -294,6 +291,7 @@ Dimension const Inset::dimension(BufferView const & bv) const
 {
 	return bv.coordCache().getInsets().dim(this);
 }
+#ifdef	INCLUDE_ORIGINAL
 
 
 InsetCode insetCode(string const & name)
@@ -491,6 +489,7 @@ bool Inset::directWrite() const
 {
 	return false;
 }
+#endif	// INCLUDE_ORIGINAL
 
 
 bool Inset::editable() const
@@ -511,6 +510,7 @@ bool Inset::autoDelete() const
 	return false;
 }
 
+#ifdef	INCLUDE_ORIGINAL
 
 void Inset::cursorPos(BufferView const & /*bv*/, CursorSlice const &,
 		bool, int & x, int & y) const

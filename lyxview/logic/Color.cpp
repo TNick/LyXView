@@ -14,16 +14,18 @@
  * Full author contact details are available in file CREDITS.
  */
 
-#include <config.h>
+#include <lyxview/config.h>
 
 #include "Color.h"
 #include "ColorSet.h"
 
-#include "support/convert.h"
-#include "support/debug.h"
-#include "support/gettext.h"
-#include "support/lstrings.h"
-#include "support/lassert.h"
+#include <lyxview/support/convert.h>
+#include <lyxview/support/debug.h>
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/support/gettext.h>
+#endif	// INCLUDE_ORIGINAL
+#include <lyxview/support/lstrings.h>
+#include <lyxview/support/lassert.h>
 
 #include <map>
 #include <cmath>

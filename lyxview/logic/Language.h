@@ -25,7 +25,9 @@ namespace lyx {
 namespace support { class FileName; }
 
 class Encoding;
+#ifdef	INCLUDE_ORIGINAL
 class Lexer;
+#endif	// INCLUDE_ORIGINAL
 
 ///
 class Language {
@@ -73,10 +75,12 @@ public:
 	bool internalFontEncoding() const { return internal_enc_; }
 	/// This language needs to be passed to babel itself (not the class)
 	bool asBabelOptions() const { return as_babel_options_; }
+#ifdef	INCLUDE_ORIGINAL
 	///
 	bool read(Lexer & lex);
 	///
 	bool readLanguage(Lexer & lex);
+#endif	// INCLUDE_ORIGINAL
 	///
 	typedef std::map<std::string, docstring> TranslationMap;
 	///

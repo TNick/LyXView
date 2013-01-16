@@ -10,22 +10,24 @@
  * Full author contact details are available in file CREDITS.
  */
 
-#include <config.h>
+#include <lyxview/config.h>
 
-#include "Encoding.h"
+#include <lyxview/logic/Encoding.h>
 
-#include "Buffer.h"
+#include <lyxview/logic/Buffer.h>
 #include "BufferList.h"
+#ifdef	INCLUDE_ORIGINAL
 #include "InsetIterator.h"
 #include "LaTeXFeatures.h"
 #include "Lexer.h"
-#include "LyXRC.h"
+#include <lyxview/logic/LyXRC.h>
+#endif	// INCLUDE_ORIGINAL
 
-#include "support/debug.h"
-#include "support/FileName.h"
-#include "support/lstrings.h"
-#include "support/textutils.h"
-#include "support/unicode.h"
+#include <lyxview/support/debug.h>
+#include <lyxview/support/FileName.h>
+#include <lyxview/support/lstrings.h>
+#include <lyxview/support/textutils.h>
+#include <lyxview/support/unicode.h>
 
 #include <boost/cstdint.hpp>
 
@@ -558,6 +560,8 @@ docstring Encodings::fromLaTeXCommand(docstring const & cmd, int cmdtype,
 
 void Encodings::initUnicodeMath(Buffer const & buffer, bool for_master)
 {
+#ifdef	INCLUDE_ORIGINAL
+
 #ifdef TEX2LYX
 	// The code below is not needed in tex2lyx and requires additional stuff
 	(void)buffer;
@@ -586,11 +590,15 @@ void Encodings::initUnicodeMath(Buffer const & buffer, bool for_master)
 	for (; bit != bend; ++bit)
 		initUnicodeMath(**bit, false);
 #endif
+#endif	// INCLUDE_ORIGINAL
+
 }
 
 
 void Encodings::validate(char_type c, LaTeXFeatures & features, bool for_mathed)
 {
+#ifdef	INCLUDE_ORIGINAL
+
 #ifdef TEX2LYX
 	// The code below is not needed in tex2lyx and requires additional stuff
 	(void)c;
@@ -640,6 +648,8 @@ void Encodings::validate(char_type c, LaTeXFeatures & features, bool for_mathed)
 		features.require("lyxmathsym");
 	}
 #endif
+#endif	// INCLUDE_ORIGINAL
+
 }
 
 
@@ -772,6 +782,7 @@ Encodings::Encodings()
 
 void Encodings::read(FileName const & encfile, FileName const & symbolsfile)
 {
+#ifdef	INCLUDE_ORIGINAL
 	// We must read the symbolsfile first, because the Encoding
 	// constructor depends on it.
 	Lexer symbolslex;
@@ -947,6 +958,8 @@ void Encodings::read(FileName const & encfile, FileName const & symbolsfile)
 			break;
 		}
 	}
+#endif	// INCLUDE_ORIGINAL
+
 }
 
 

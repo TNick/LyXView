@@ -147,3 +147,232 @@ HEADERS += \
 
 SOURCES += \
     ../../../lyxview/logic/Encoding.cpp
+
+HEADERS += \
+    ../../../lyxview/logic/Dimension.h
+
+SOURCES += \
+    ../../../lyxview/logic/Dimension.cpp
+
+HEADERS += \
+    ../../../lyxview/view/BufferView.h
+
+SOURCES += \
+    ../../../lyxview/view/BufferView.cpp
+
+HEADERS += \
+    ../../../lyxview/view/update_flags.h
+
+HEADERS += \
+    ../../../lyxview/logic/CoordCache.h
+
+SOURCES += \
+    ../../../lyxview/logic/CoordCache.cpp
+
+HEADERS += \
+    ../../../lyxview/logic/DocIterator.h
+
+SOURCES += \
+    ../../../lyxview/logic/DocIterator.cpp
+
+HEADERS += \
+    ../../../lyxview/logic/CursorSlice.h
+
+SOURCES += \
+    ../../../lyxview/logic/CursorSlice.cpp
+
+HEADERS += \
+    ../../../lyxview/mathed/InsetMathRef.h \
+    ../../../lyxview/mathed/InsetMath.h
+
+SOURCES += \
+    ../../../lyxview/mathed/InsetMathRef.cpp \
+    ../../../lyxview/mathed/InsetMath.cpp
+
+HEADERS += \
+    ../../../lyxview/insets/InsetCommand.h
+
+SOURCES += \
+    ../../../lyxview/insets/InsetCommand.cpp
+
+HEADERS += \
+    ../../../lyxview/insets/InsetCommandParams.h
+
+SOURCES += \
+    ../../../lyxview/insets/InsetCommandParams.cpp
+
+HEADERS += \
+    ../../../lyxview/render/RenderPreview.h \
+    ../../../lyxview/render/RenderGraphic.h \
+    ../../../lyxview/render/RenderButton.h \
+    ../../../lyxview/render/RenderBase.h
+
+SOURCES += \
+    ../../../lyxview/render/RenderPreview.cpp \
+    ../../../lyxview/render/RenderGraphic.cpp \
+    ../../../lyxview/render/RenderButton.cpp
+
+HEADERS += \
+    ../../../lyxview/output/output_xhtml.h \
+    ../../../lyxview/output/output_plaintext.h \
+    ../../../lyxview/output/OutputParams.h \
+    ../../../lyxview/output/output_latex.h \
+    ../../../lyxview/output/OutputEnums.h \
+    ../../../lyxview/output/output_docbook.h \
+    ../../../lyxview/output/output.h
+
+SOURCES += \
+    ../../../lyxview/output/output_xhtml.cpp \
+    ../../../lyxview/output/output_plaintext.cpp \
+    ../../../lyxview/output/OutputParams.cpp \
+    ../../../lyxview/output/output_latex.cpp \
+    ../../../lyxview/output/output_docbook.cpp \
+    ../../../lyxview/output/output.cpp
+
+HEADERS += \
+    ../../../lyxview/support/shared_ptr.h
+
+HEADERS += \
+    ../../../lyxview/logic/Changes.h
+
+SOURCES += \
+    ../../../lyxview/logic/Changes.cpp
+
+HEADERS += \
+    ../../../lyxview/support/lyxtime.h
+
+SOURCES += \
+    ../../../lyxview/support/lyxtime.cpp
+
+HEADERS += \
+    ../../../lyxview/logic/Box.h
+
+SOURCES += \
+    ../../../lyxview/logic/Box.cpp
+
+HEADERS += \
+    ../../../lyxview/insets/InsetText.h \
+    ../../../lyxview/insets/InsetTabular.h \
+    ../../../lyxview/insets/InsetList.h \
+    ../../../lyxview/insets/InsetIterator.h
+
+SOURCES += \
+    ../../../lyxview/insets/InsetText.cpp \
+    ../../../lyxview/insets/InsetTabular.cpp \
+    ../../../lyxview/insets/InsetList.cpp \
+    ../../../lyxview/insets/InsetIterator.cpp
+
+HEADERS += \
+    ../../../lyxview/logic/Cursor.h
+
+SOURCES += \
+    ../../../lyxview/logic/Cursor.cpp
+
+HEADERS += \
+    ../../../lyxview/logic/DispatchResult.h
+
+HEADERS += \
+    ../../../lyxview/logic/Undo.h
+
+SOURCES += \
+    ../../../lyxview/logic/Undo.cpp
+
+HEADERS += \
+    ../../../lyxview/mathed/MathParser_flags.h \
+    ../../../lyxview/mathed/MathParser.h
+
+SOURCES += \
+    ../../../lyxview/mathed/MathParser.cpp
+
+HEADERS += \
+    ../../../lyxview/func/FuncStatus.h \
+    ../../../lyxview/func/FuncRequest.h \
+    ../../../lyxview/func/FuncCode.h
+
+SOURCES += \
+    ../../../lyxview/func/FuncStatus.cpp \
+    ../../../lyxview/func/FuncRequest.cpp
+
+HEADERS += \
+    ../../../lyxview/logic/MetricsInfo.h
+
+SOURCES += \
+    ../../../lyxview/logic/MetricsInfo.cpp
+
+HEADERS += \
+    ../../../lyxview/para/ParIterator.h \
+    ../../../lyxview/para/ParagraphParameters.h \
+    ../../../lyxview/para/ParagraphMetrics.h \
+    ../../../lyxview/para/ParagraphList.h \
+    ../../../lyxview/para/Paragraph.h
+
+SOURCES += \
+    ../../../lyxview/para/ParIterator.cpp \
+    ../../../lyxview/para/ParagraphParameters.cpp \
+    ../../../lyxview/para/ParagraphMetrics.cpp \
+    ../../../lyxview/para/Paragraph.cpp
+
+HEADERS += \
+    ../../../lyxview/mathed/MathAtom.h
+
+SOURCES += \
+    ../../../lyxview/mathed/MathAtom.cpp
+
+HEADERS += \
+    ../../../lyxview/logic/Intl.h
+
+SOURCES += \
+    ../../../lyxview/logic/Intl.cpp
+
+HEADERS += \
+    ../../../lyxview/logic/Trans.h
+
+SOURCES += \
+    ../../../lyxview/logic/Trans.cpp
+
+HEADERS += \
+    ../../../lyxview/frontends/mouse_state.h
+
+HEADERS += \
+    ../../../lyxview/text/TextMetrics.h \
+    ../../../lyxview/text/Text.h
+
+SOURCES += \
+    ../../../lyxview/text/TextMetrics.cpp \
+    ../../../lyxview/text/Text3.cpp \
+    ../../../lyxview/text/Text2.cpp \
+    ../../../lyxview/text/Text.cpp
+
+HEADERS += \
+    ../../../lyxview/logic/SpellChecker.h
+
+HEADERS += \
+    ../../../lyxview/metrics/Spacing.h \
+    ../../../lyxview/metrics/MetricsInfo.h \
+    ../../../lyxview/metrics/Length.h
+
+SOURCES += \
+    ../../../lyxview/metrics/Spacing.cpp \
+    ../../../lyxview/metrics/MetricsInfo.cpp \
+    ../../../lyxview/metrics/Length.cpp
+
+HEADERS += \
+    ../../../lyxview/logic/buffer_funcs.h
+
+SOURCES += \
+    ../../../lyxview/logic/buffer_funcs.cpp
+
+HEADERS += \
+    ../../../lyxview/logic/Counters.h
+
+SOURCES += \
+    ../../../lyxview/logic/Counters.cpp
+
+HEADERS += \
+    ../../../lyxview/support/docstring_list.h
+
+HEADERS += \
+    ../../../lyxview/logic/factory.h
+
+SOURCES += \
+    ../../../lyxview/logic/factory.cpp

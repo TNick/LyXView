@@ -11,20 +11,24 @@
  * Full author contact details are available in file CREDITS.
  */
 
-#include <config.h>
+#include <lyxview/config.h>
 
-#include "Language.h"
+#include <lyxview/logic/Language.h>
 
-#include "Encoding.h"
+#include <lyxview/logic/Encoding.h>
+#ifdef	INCLUDE_ORIGINAL
 #include "Lexer.h"
-#include "LyXRC.h"
+#include <lyxview/logic/LyXRC.h>
+#endif	// INCLUDE_ORIGINAL
 
-#include "support/debug.h"
-#include "support/FileName.h"
-#include "support/filetools.h"
-#include "support/lassert.h"
-#include "support/lstrings.h"
-#include "support/Messages.h"
+#include <lyxview/support/debug.h>
+#include <lyxview/support/FileName.h>
+#include <lyxview/support/filetools.h>
+#include <lyxview/support/lassert.h>
+#include <lyxview/support/lstrings.h>
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/support/Messages.h>
+#endif	// INCLUDE_ORIGINAL
 
 using namespace std;
 using namespace lyx::support;
@@ -57,6 +61,7 @@ docstring const Language::translateLayout(string const & m) const
 }
 
 
+#ifdef	INCLUDE_ORIGINAL
 bool Language::readLanguage(Lexer & lex)
 {
 	enum LanguageTags {
@@ -190,6 +195,7 @@ bool Language::read(Lexer & lex)
 	translated_ = getMessages(code()).available();
 	return true;
 }
+#endif	// INCLUDE_ORIGINAL
 
 
 void Language::readLayoutTranslations(Language::TranslationMap const & trans, bool replace)
@@ -205,6 +211,7 @@ void Language::readLayoutTranslations(Language::TranslationMap const & trans, bo
 
 void Languages::read(FileName const & filename)
 {
+#ifdef	INCLUDE_ORIGINAL
 	Lexer lex;
 	lex.setFile(filename);
 	lex.setContext("Languages::read");
@@ -252,10 +259,13 @@ void Languages::read(FileName const & filename)
 	// Read layout translations
 	FileName const path = libFileSearch(string(), "layouttranslations");
 	readLayoutTranslations(path);
+#endif	// INCLUDE_ORIGINAL
+
 }
 
 
 namespace {
+#ifdef	INCLUDE_ORIGINAL
 
 bool readTranslations(Lexer & lex, Language::TranslationMap & trans)
 {
@@ -272,6 +282,7 @@ bool readTranslations(Lexer & lex, Language::TranslationMap & trans)
 	}
 	return true;
 }
+#endif	// INCLUDE_ORIGINAL
 
 
 enum Match {
@@ -307,6 +318,7 @@ Match match(string const & code, Language const & lang)
 
 void Languages::readLayoutTranslations(support::FileName const & filename)
 {
+#ifdef	INCLUDE_ORIGINAL
 	Lexer lex;
 	lex.setFile(filename);
 	lex.setContext("Languages::read");
@@ -356,6 +368,7 @@ void Languages::readLayoutTranslations(support::FileName const & filename)
 			                                   m == ExactMatch);
 		}
 	}
+#endif	// INCLUDE_ORIGINAL
 
 }
 

@@ -14,20 +14,20 @@
 
 #include <lyxview/config.h>
 
-#include "Font.h"
+#include <lyxview/logic/Font.h>
 
-#include "BufferParams.h" // stateText
+#include <lyxview/logic/BufferParams.h> // stateText
 #include "ColorSet.h"
-#include "Language.h"
-#include "Encoding.h"
+#include <lyxview/logic/Language.h>
+#include <lyxview/logic/Encoding.h>
 
 #ifdef	INCLUDE_ORIGINAL
 
 #include "LaTeXFeatures.h"
 #include "Lexer.h"
-#include "LyXRC.h"
+#include <lyxview/logic/LyXRC.h>
 #include "output_latex.h"
-#include "OutputParams.h"
+#include <lyxview/output/OutputParams.h>
 
 #include <lyxview/support/gettext.h>
 #endif	// INCLUDE_ORIGINAL
@@ -147,6 +147,7 @@ void Font::update(Font const & newfont,
 
 docstring const stateText(FontInfo const & f)
 {
+#ifdef	INCLUDE_ORIGINAL
 	odocstringstream os;
 	if (f.family() != INHERIT_FAMILY)
 		os << _(GUIFamilyNames[f.family()]) << ", ";
@@ -183,11 +184,16 @@ docstring const stateText(FontInfo const & f)
 		os << _("Default") << ", ";
 
 	return os.str();
+#else
+	return docstring();
+#endif	// INCLUDE_ORIGINAL
 }
 
 
 docstring const Font::stateText(BufferParams * params) const
 {
+#ifdef	INCLUDE_ORIGINAL
+
 	odocstringstream os;
 	os << lyx::stateText(bits_);
 	if (!params || (language() != params->language))
@@ -197,6 +203,9 @@ docstring const Font::stateText(BufferParams * params) const
 		os << "  " << bformat(_("Number %1$s"),
 			      _(GUIMiscNames[bits_.number()]));
 	return rtrim(os.str(), ", ");
+#else
+	return docstring();
+#endif	// INCLUDE_ORIGINAL
 }
 
 
@@ -211,6 +220,7 @@ string const Font::latexSize() const
 void Font::lyxWriteChanges(Font const & orgfont,
 			      ostream & os) const
 {
+#ifdef	INCLUDE_ORIGINAL
 	os << "\n";
 	if (orgfont.fontInfo().family() != bits_.family())
 		os << "\\family " << LyXFamilyNames[bits_.family()] << "\n";
@@ -264,9 +274,11 @@ void Font::lyxWriteChanges(Font const & orgfont,
 		else
 			os << "\\lang unknown\n";
 	}
+#endif	// INCLUDE_ORIGINAL
 }
 
 
+#ifdef	INCLUDE_ORIGINAL
 /// Writes the head of the LaTeX needed to impose this font
 // Returns number of chars written.
 int Font::latexWriteStartChanges(odocstream & os, BufferParams const & bparams,
@@ -552,6 +564,7 @@ int Font::latexWriteEndChanges(otexstream & os, BufferParams const & bparams,
 
 	return count;
 }
+#endif	// INCLUDE_ORIGINAL
 
 
 string Font::toString(bool const toggle) const
@@ -559,6 +572,7 @@ string Font::toString(bool const toggle) const
 	string const lang = (language() == reset_language)
 		? "reset" : language()->lang();
 
+#ifdef	INCLUDE_ORIGINAL
 	ostringstream os;
 	os << "family " << bits_.family() << '\n'
 	   << "series " << bits_.series() << '\n'
@@ -575,11 +589,15 @@ string Font::toString(bool const toggle) const
 	   << "language " << lang << '\n'
 	   << "toggleall " << convert<string>(toggle);
 	return os.str();
+#else
+	return lang;
+#endif	// INCLUDE_ORIGINAL
 }
 
 
 bool Font::fromString(string const & data, bool & toggle)
 {
+#ifdef	INCLUDE_ORIGINAL
 	istringstream is(data);
 	Lexer lex;
 	lex.setStream(is);
@@ -657,9 +675,13 @@ bool Font::fromString(string const & data, bool & toggle)
 		++nset;
 	}
 	return (nset > 0);
+#else
+	return false;
+#endif	// INCLUDE_ORIGINAL
 }
 
 
+#ifdef	INCLUDE_ORIGINAL
 void Font::validate(LaTeXFeatures & features) const
 {
 	BufferParams const & bparams = features.bufferParams();
@@ -720,10 +742,12 @@ ostream & operator<<(ostream & os, FontState fms)
 {
 	return os << int(fms);
 }
+#endif	// INCLUDE_ORIGINAL
 
 
 ostream & operator<<(ostream & os, FontInfo const & f)
 {
+#ifdef	INCLUDE_ORIGINAL
 	return os << "font:"
 		<< " family " << f.family()
 		<< " series " << f.series()
@@ -739,13 +763,20 @@ ostream & operator<<(ostream & os, FontInfo const & f)
 		<< " uwave " << f.uwave()
 		<< " noun " << f.noun()
 		<< " number " << f.number();
+#else
+	return os;
+#endif	// INCLUDE_ORIGINAL
 }
 
 
 ostream & operator<<(ostream & os, Font const & font)
 {
+#ifdef	INCLUDE_ORIGINAL
 	return os << font.bits_
 		<< " lang: " << (font.lang_ ? font.lang_->lang() : 0);
+#else
+	return os;
+#endif	// INCLUDE_ORIGINAL
 }
 
 
