@@ -17,7 +17,7 @@
 
 #include <lyxview/logic/Encoding.h>
 #ifdef	INCLUDE_ORIGINAL
-#include "Lexer.h"
+#include <lyxview/logic/Lexer.h>
 #include <lyxview/logic/LyXRC.h>
 #endif	// INCLUDE_ORIGINAL
 

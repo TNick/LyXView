@@ -17,11 +17,11 @@
 #ifdef	INCLUDE_ORIGINAL
 
 #include <lyxview/logic/Encoding.h>
-#include "Spacing.h"
+#include <lyxview/metrics/Spacing.h>
 
 #endif	// INCLUDE_ORIGINAL
 
-#include "FontInfo.h"
+#include <lyxview/logic/FontInfo.h>
 
 #include "LayoutEnums.h"
 #include <lyxview/support/docstring.h>

@@ -18,7 +18,7 @@
 #define PARAGRAPH_METRICS_H
 
 #include "Dimension.h"
-#include "Row.h"
+#include <lyxview/logic/Row.h>
 
 #include <map>
 #include <vector>

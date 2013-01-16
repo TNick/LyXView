@@ -13,7 +13,7 @@
 #define LCURSOR_H
 
 #include "DispatchResult.h"
-#include "DocIterator.h"
+#include <lyxview/logic/DocIterator.h>
 #include <lyxview/logic/Font.h>
 #include "Undo.h"
 

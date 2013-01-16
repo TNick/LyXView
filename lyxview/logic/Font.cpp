@@ -17,20 +17,21 @@
 #include <lyxview/logic/Font.h>
 
 #include <lyxview/logic/BufferParams.h> // stateText
-#include "ColorSet.h"
+#include <lyxview/logic/ColorSet.h>
 #include <lyxview/logic/Language.h>
 #include <lyxview/logic/Encoding.h>
 
 #ifdef	INCLUDE_ORIGINAL
 
-#include "LaTeXFeatures.h"
-#include "Lexer.h"
+#include <lyxview/logic/LaTeXFeatures.h>
+#include <lyxview/logic/Lexer.h>
 #include <lyxview/logic/LyXRC.h>
-#include "output_latex.h"
-#include <lyxview/output/OutputParams.h>
 
 #include <lyxview/support/gettext.h>
 #endif	// INCLUDE_ORIGINAL
+
+#include <lyxview/output/output_latex.h>
+#include <lyxview/output/OutputParams.h>
 
 #include <lyxview/support/lassert.h>
 #include <lyxview/support/convert.h>

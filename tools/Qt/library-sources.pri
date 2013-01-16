@@ -294,12 +294,6 @@ SOURCES += \
     ../../../lyxview/func/FuncRequest.cpp
 
 HEADERS += \
-    ../../../lyxview/logic/MetricsInfo.h
-
-SOURCES += \
-    ../../../lyxview/logic/MetricsInfo.cpp
-
-HEADERS += \
     ../../../lyxview/para/ParIterator.h \
     ../../../lyxview/para/ParagraphParameters.h \
     ../../../lyxview/para/ParagraphMetrics.h \
@@ -376,3 +370,6 @@ HEADERS += \
 
 SOURCES += \
     ../../../lyxview/logic/factory.cpp
+
+HEADERS += \
+    ../../../lyxview/support/RandomAccessList.h

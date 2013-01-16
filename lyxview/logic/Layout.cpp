@@ -12,23 +12,23 @@
 
 #include <lyxview/config.h>
 
-#ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/Encoding.h>
 #include <lyxview/logic/Language.h>
-#include "Lexer.h"
-#include "output_xhtml.h"
+
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/Lexer.h>
+#include <lyxview/support/Messages.h>
 #endif	// INCLUDE_ORIGINAL
 
+#include <lyxview/output/output_xhtml.h>
+
 #include <lyxview/logic/Layout.h>
-#include "FontInfo.h"
+#include <lyxview/logic/FontInfo.h>
 #include <lyxview/text/TextClass.h>
 
 #include <lyxview/support/debug.h>
 #include <lyxview/support/lassert.h>
 #include <lyxview/support/lstrings.h>
-#ifdef	INCLUDE_ORIGINAL
-#include <lyxview/support/Messages.h>
-#endif	// INCLUDE_ORIGINAL
 #include <lyxview/support/regex.h>
 #include <lyxview/support/textutils.h>
 

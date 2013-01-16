@@ -15,6 +15,7 @@
 
 #include "InsetCommandParams.h"
 
+#ifdef	INCLUDE_ORIGINAL
 #include "InsetBibitem.h"
 #include "InsetBibtex.h"
 #include "InsetCitation.h"
@@ -27,9 +28,11 @@
 #include "InsetNomencl.h"
 #include "InsetRef.h"
 #include "InsetTOC.h"
+#include <lyxview/logic/Lexer.h>
+#include <lyxview/support/gettext.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/logic/Encoding.h>
-#include "Lexer.h"
 #include <lyxview/output/OutputParams.h>
 
 #include <lyxview/frontends/alert.h>
@@ -37,7 +40,6 @@
 #include <lyxview/support/debug.h>
 #include <lyxview/support/docstream.h>
 #include <lyxview/support/ExceptionMessage.h>
-#include <lyxview/support/gettext.h>
 #include <lyxview/support/lstrings.h>
 
 #include <lyxview/support/lassert.h>

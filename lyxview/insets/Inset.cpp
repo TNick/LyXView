@@ -43,7 +43,7 @@
 #ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/buffer_funcs.h>
 #include "DispatchResult.h"
-#include "output_xhtml.h"
+#include <lyxview/output/output_xhtml.h>
 
 #include <lyxview/frontends/Application.h>
 #include <lyxview/frontends/Painter.h>

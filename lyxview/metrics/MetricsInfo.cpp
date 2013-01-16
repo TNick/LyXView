@@ -10,13 +10,13 @@
 
 #include <lyxview/config.h>
 
-#include "BufferView.h"
-#include "ColorSet.h"
+#include <lyxview/view/BufferView.h>
+#include <lyxview/logic/ColorSet.h>
 #include "MetricsInfo.h"
 
 #include <lyxview/insets/Inset.h>
 
-#include "mathed/MathSupport.h"
+#include <lyxview/mathed/MathSupport.h>
 
 #include <lyxview/frontends/Painter.h>
 

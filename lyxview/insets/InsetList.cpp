@@ -16,9 +16,11 @@
 
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/BufferParams.h>
-#include "BranchList.h"
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/BranchList.h>
 
 #include <lyxview/insets/InsetBranch.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/debug.h>
 

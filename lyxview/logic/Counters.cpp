@@ -15,11 +15,13 @@
 
 #include <lyxview/logic/Counters.h>
 #include <lyxview/logic/Layout.h>
-#include "Lexer.h"
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/Lexer.h>
+#include <lyxview/support/gettext.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/convert.h>
 #include <lyxview/support/debug.h>
-#include <lyxview/support/gettext.h>
 #include <lyxview/support/lassert.h>
 #include <lyxview/support/lstrings.h>
 

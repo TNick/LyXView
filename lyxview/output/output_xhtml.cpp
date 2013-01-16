@@ -12,7 +12,7 @@
 
 #include <lyxview/config.h>
 
-#include "output_xhtml.h"
+#include <lyxview/output/output_xhtml.h>
 
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/buffer_funcs.h>

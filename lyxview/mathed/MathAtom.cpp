@@ -10,8 +10,8 @@
 
 #include <lyxview/config.h>
 
-#include "MathAtom.h"
-#include "InsetMath.h"
+#include <lyxview/mathed/MathAtom.h>
+#include <lyxview/mathed/InsetMath.h>
 
 using namespace std;
 

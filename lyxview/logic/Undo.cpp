@@ -20,13 +20,15 @@
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/BufferParams.h>
 #include <lyxview/logic/buffer_funcs.h>
-#include "DocIterator.h"
+#include <lyxview/logic/DocIterator.h>
 #include <lyxview/para/Paragraph.h>
 #include <lyxview/para/ParagraphList.h>
 #include <lyxview/text/Text.h>
 
-#include "mathed/MathSupport.h"
-#include "mathed/MathData.h"
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/mathed/MathSupport.h>
+#include <lyxview/mathed/MathData.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/insets/Inset.h>
 

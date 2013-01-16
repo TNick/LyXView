@@ -14,54 +14,54 @@
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/BufferList.h>
 #include <lyxview/logic/BufferParams.h>
+#include <lyxview/logic/buffer_funcs.h>
+#include <lyxview/logic/Counters.h>
+#include <lyxview/logic/Encoding.h>
+#include <lyxview/logic/DocIterator.h>
+#include <lyxview/func/FuncRequest.h>
+#include <lyxview/func/FuncStatus.h>
+#include <lyxview/insets/InsetIterator.h>
+#include <lyxview/insets/InsetList.h>
+#include <lyxview/logic/Language.h>
+#include <lyxview/LyX.h>
+#include <lyxview/output/output_docbook.h>
+#include <lyxview/output/output.h>
+#include <lyxview/para/Paragraph.h>
+#include <lyxview/para/ParagraphParameters.h>
+#include <lyxview/para/ParIterator.h>
+#include <lyxview/text/Text.h>
+#include <lyxview/text/TextClass.h>
 
 #ifdef	INCLUDE_ORIGINAL
 
-#include "Author.h"
-#include "LayoutFile.h"
+#include <lyxview/logic/TexStream.h>
+#include <lyxview/logic/Author.h>
+#include <lyxview/logic/LayoutFile.h>
 #include "BiblioInfo.h"
-#include "BranchList.h"
-#include <lyxview/logic/buffer_funcs.h>
-#include "Bullet.h"
+#include <lyxview/logic/BranchList.h>
+#include <lyxview/logic/Bullet.h>
 #include "Chktex.h"
-#include "Converter.h"
-#include <lyxview/logic/Counters.h>
+#include <lyxview/logic/Converter.h>
 #include "DispatchResult.h"
-#include "DocIterator.h"
-#include <lyxview/logic/Encoding.h>
-#include "ErrorList.h"
+#include <lyxview/logic/ErrorList.h>
 #include "Exporter.h"
 #include "Format.h"
-#include "FuncRequest.h"
-#include "FuncStatus.h"
-#include "IndicesList.h"
-#include "InsetIterator.h"
-#include <lyxview/insets/InsetList.h>
-#include <lyxview/logic/Language.h>
-#include "LaTeXFeatures.h"
-#include "LaTeX.h"
+#include <lyxview/logic/IndicesList.h>
+#include <lyxview/logic/LaTeXFeatures.h>
+#include <lyxview/logic/LaTeX.h>
 #include <lyxview/logic/Layout.h>
-#include "Lexer.h"
-#include "LyXAction.h"
-#include "LyX.h"
+#include <lyxview/logic/Lexer.h>
+#include <lyxview/logic/LyXAction.h>
 #include <lyxview/logic/LyXRC.h>
 #include "LyXVC.h"
-#include "output_docbook.h"
-#include "output.h"
-#include "output_latex.h"
-#include "output_xhtml.h"
-#include "output_plaintext.h"
-#include <lyxview/para/Paragraph.h>
-#include <lyxview/para/ParagraphParameters.h>
-#include "ParIterator.h"
-#include "PDFOptions.h"
+#include <lyxview/output/output_latex.h>
+#include <lyxview/output/output_xhtml.h>
+#include <lyxview/output/output_plaintext.h>
+#include <lyxview/logic/PDFOptions.h>
 #include "SpellChecker.h"
 #include <lyxview/logic/sgml.h>
 #include <lyxview/logic/TexRow.h>
-#include "TexStream.h"
-#include <lyxview/text/Text.h>
-#include <lyxview/text/TextClass.h>
-#include "TocBackend.h"
+#include <lyxview/logic/TocBackend.h>
 #include "Undo.h"
 #include "VCBackend.h"
 #include "version.h"
@@ -84,21 +84,24 @@
 #include <lyxview/frontends/Delegates.h>
 #include <lyxview/frontends/WorkAreaManager.h>
 
-#include <lyxview/support/docstring_list.h>
 #include <lyxview/support/ForkedCalls.h>
 #include <lyxview/support/gettext.h>
 #include <lyxview/support/gzstream.h>
-#include <lyxview/support/lstrings.h>
-#include <lyxview/support/lyxalgo.h>
 #include <lyxview/support/Package.h>
 #include <lyxview/support/Path.h>
 #include <lyxview/support/Systemcall.h>
+
+#include <lyxview/support/lyxalgo.h>
+
+#endif	// INCLUDE_ORIGINAL
+
+#include <lyxview/support/docstring_list.h>
+#include <lyxview/support/lstrings.h>
 #include <lyxview/support/textutils.h>
+
 
 #include <lyxview/support/bind.h>
 #include <lyxview/support/shared_ptr.h>
-
-#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/frontends/alert.h>
 

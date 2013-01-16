@@ -14,27 +14,30 @@
 
 #include <lyxview/config.h>
 
+#ifdef	INCLUDE_ORIGINAL
 #include "Bidi.h"
+#include <lyxview/logic/CutAndPaste.h>
+#include <lyxview/logic/LyXAction.h>
+#include <lyxview/logic/LyXRC.h>
+#include <lyxview/logic/Row.h>
+#include <lyxview/logic/TocBackend.h>
+#endif	// INCLUDE_ORIGINAL
+
 #include <lyxview/logic/Buffer.h>
-#include "BufferView.h"
+#include <lyxview/view/BufferView.h>
 #include "CoordCache.h"
-#include "Cursor.h"
-#include "CutAndPaste.h"
+#include <lyxview/logic/Cursor.h>
 #include "DispatchResult.h"
 #include <lyxview/logic/Encoding.h>
 #include <lyxview/logic/Font.h>
-#include "FuncCode.h"
-#include "FuncRequest.h"
+#include <lyxview/func/FuncCode.h>
+#include <lyxview/func/FuncRequest.h>
 #include <lyxview/logic/Language.h>
 #include <lyxview/logic/Layout.h>
-#include "LyXAction.h"
-#include <lyxview/logic/LyXRC.h>
 #include <lyxview/para/Paragraph.h>
-#include "ParIterator.h"
-#include "Row.h"
+#include <lyxview/para/ParIterator.h>
 #include <lyxview/text/Text.h>
-#include "TextMetrics.h"
-#include "TocBackend.h"
+#include <lyxview/text/TextMetrics.h>
 
 #include <lyxview/support/lassert.h>
 #include <lyxview/support/debug.h>
@@ -43,12 +46,14 @@
 #include <lyxview/insets/InsetTabular.h>
 #include <lyxview/insets/InsetText.h>
 
-#include "mathed/InsetMath.h"
-#include "mathed/InsetMathBrace.h"
-#include "mathed/InsetMathScript.h"
-#include "mathed/MacroTable.h"
-#include "mathed/MathData.h"
-#include "mathed/MathMacro.h"
+#include <lyxview/mathed/InsetMath.h>
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/mathed/InsetMathBrace.h>
+#include <lyxview/mathed/InsetMathScript.h>
+#include <lyxview/mathed/MacroTable.h>
+#include <lyxview/mathed/MathData.h>
+#include <lyxview/mathed/MathMacro.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/bind.h>
 
@@ -1264,13 +1269,13 @@ LyXErr & operator<<(LyXErr & os, Cursor const & cur)
 //
 ///////////////////////////////////////////////////////////////////
 
-#include "mathed/InsetMathChar.h"
-#include "mathed/InsetMathGrid.h"
-#include "mathed/InsetMathScript.h"
-#include "mathed/InsetMathUnknown.h"
-#include "mathed/MathFactory.h"
-#include "mathed/MathStream.h"
-#include "mathed/MathSupport.h"
+#include <lyxview/mathed/InsetMathChar.h>
+#include <lyxview/mathed/InsetMathGrid.h>
+#include <lyxview/mathed/InsetMathScript.h>
+#include <lyxview/mathed/InsetMathUnknown.h>
+#include <lyxview/mathed/MathFactory.h>
+#include <lyxview/mathed/MathStream.h>
+#include <lyxview/mathed/MathSupport.h>
 
 
 namespace lyx {

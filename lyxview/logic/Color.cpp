@@ -16,8 +16,8 @@
 
 #include <lyxview/config.h>
 
-#include "Color.h"
-#include "ColorSet.h"
+#include <lyxview/logic/Color.h>
+#include <lyxview/logic/ColorSet.h>
 
 #include <lyxview/support/convert.h>
 #include <lyxview/support/debug.h>

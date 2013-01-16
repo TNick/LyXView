@@ -10,7 +10,7 @@
 
 #include <lyxview/config.h>
 
-#include "output.h"
+#include <lyxview/output/output.h>
 
 #ifdef	INCLUDE_ORIGINAL
 #include <lyxview/support/gettext.h>

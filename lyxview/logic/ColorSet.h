@@ -19,7 +19,7 @@
 #ifndef COLORSET_H
 #define COLORSET_H
 
-#include "Color.h"
+#include <lyxview/logic/Color.h>
 
 #include <map>
 #include <string>

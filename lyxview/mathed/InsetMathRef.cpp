@@ -10,26 +10,28 @@
 
 #include <lyxview/config.h>
 
-#include "InsetMathRef.h"
+#include <lyxview/mathed/InsetMathRef.h>
 
-#include "BufferView.h"
+#include <lyxview/view/BufferView.h>
 #include <lyxview/logic/Buffer.h>
-#include "Cursor.h"
-#include "FuncRequest.h"
-#include "FuncStatus.h"
-#include "LaTeXFeatures.h"
-#include "LyX.h"
-#include "MathData.h"
-#include "MathFactory.h"
-#include "MathSupport.h"
+#include <lyxview/logic/Cursor.h>
+#include <lyxview/func/FuncRequest.h>
+#include <lyxview/func/FuncStatus.h>
+#include <lyxview/LyX.h>
 #include <lyxview/output/OutputParams.h>
-#include "ParIterator.h"
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/LaTeXFeatures.h>
+#include <lyxview/mathed/MathData.h>
+#include <lyxview/mathed/MathFactory.h>
+#include <lyxview/mathed/MathSupport.h>
+#include <lyxview/para/ParIterator.h>
 #include <lyxview/logic/sgml.h>
+#include <lyxview/support/gettext.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/insets/InsetCommand.h>
 
 #include <lyxview/support/debug.h>
-#include <lyxview/support/gettext.h>
 
 #include <ostream>
 

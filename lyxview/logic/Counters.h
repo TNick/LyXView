@@ -15,7 +15,7 @@
 #ifndef COUNTERS_H
 #define COUNTERS_H
 
-#include "OutputEnums.h"
+#include <lyxview/output/OutputEnums.h>
 
 #include <lyxview/support/docstring.h>
 

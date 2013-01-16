@@ -15,8 +15,8 @@
 #ifndef FONT_PROPERTIES_H
 #define FONT_PROPERTIES_H
 
-#include "Color.h"
-#include "ColorCode.h"
+#include <lyxview/logic/Color.h>
+#include <lyxview/logic/ColorCode.h>
 #include "FontEnums.h"
 #include <lyxview/support/strfwd.h>
 

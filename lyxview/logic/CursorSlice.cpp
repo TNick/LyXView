@@ -22,8 +22,10 @@
 
 #include <lyxview/insets/Inset.h>
 
-#include "mathed/InsetMath.h"
-#include "mathed/MathData.h"
+#include <lyxview/mathed/InsetMath.h>
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/mathed/MathData.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/lassert.h>
 

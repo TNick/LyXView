@@ -13,18 +13,22 @@
 
 #include <lyxview/config.h>
 
-#include "Changes.h"
-#include "Author.h"
+#include <lyxview/logic/Changes.h>
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/BufferParams.h>
 #include <lyxview/logic/Encoding.h>
-#include "LaTeXFeatures.h"
 #include <lyxview/output/OutputParams.h>
 #include <lyxview/para/Paragraph.h>
-#include "TocBackend.h"
+
+#ifdef	INCLUDE_ORIGINAL
+
+#include <lyxview/logic/TocBackend.h>
+#include <lyxview/logic/Author.h>
+#include <lyxview/logic/LaTeXFeatures.h>
+#include <lyxview/support/gettext.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/debug.h>
-#include <lyxview/support/gettext.h>
 #include <lyxview/support/lassert.h>
 #include <lyxview/support/lstrings.h>
 

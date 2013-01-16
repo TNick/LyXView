@@ -19,7 +19,7 @@
 #ifndef COLOR_H
 #define COLOR_H
 
-#include "ColorCode.h"
+#include <lyxview/logic/ColorCode.h>
 
 #include <lyxview/support/strfwd.h>
 

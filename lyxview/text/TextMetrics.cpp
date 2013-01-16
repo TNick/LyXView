@@ -17,7 +17,7 @@
 
 #include <lyxview/config.h>
 
-#include "TextMetrics.h"
+#include <lyxview/text/TextMetrics.h>
 
 #ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/Bidi.h>

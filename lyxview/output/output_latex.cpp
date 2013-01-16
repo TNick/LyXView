@@ -10,7 +10,7 @@
 
 #include <lyxview/config.h>
 
-#include "output_latex.h"
+#include <lyxview/output/output_latex.h>
 
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/BufferParams.h>

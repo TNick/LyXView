@@ -11,7 +11,7 @@
 
 #include <lyxview/config.h>
 
-#include "output_docbook.h"
+#include <lyxview/output/output_docbook.h>
 
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/buffer_funcs.h>

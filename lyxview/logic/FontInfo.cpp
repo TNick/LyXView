@@ -14,10 +14,10 @@
 
 #include <lyxview/config.h>
 
-#include "ColorSet.h"
-#include "FontInfo.h"
+#include <lyxview/logic/ColorSet.h>
+#include <lyxview/logic/FontInfo.h>
 #ifdef	INCLUDE_ORIGINAL
-#include "Lexer.h"
+#include <lyxview/logic/Lexer.h>
 #endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/debug.h>

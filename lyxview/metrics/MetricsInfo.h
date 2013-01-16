@@ -13,9 +13,9 @@
 #ifndef METRICSINFO_H
 #define METRICSINFO_H
 
-#include "Changes.h"
-#include "ColorCode.h"
-#include "FontInfo.h"
+#include <lyxview/logic/Changes.h>
+#include <lyxview/logic/ColorCode.h>
+#include <lyxview/logic/FontInfo.h>
 
 #include <lyxview/support/strfwd.h>
 #include <lyxview/support/types.h>

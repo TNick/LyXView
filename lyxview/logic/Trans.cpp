@@ -14,11 +14,13 @@
 #include "Trans.h"
 
 #include <lyxview/logic/Buffer.h>
-#include "BufferView.h"
-#include "Cursor.h"
-#include "CutAndPaste.h"
-#include "Lexer.h"
+#include <lyxview/view/BufferView.h>
+#include <lyxview/logic/Cursor.h>
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/CutAndPaste.h>
+#include <lyxview/logic/Lexer.h>
 #include <lyxview/logic/LyXRC.h>
+#endif	// INCLUDE_ORIGINAL
 #include <lyxview/text/Text.h>
 
 #include <lyxview/support/debug.h>

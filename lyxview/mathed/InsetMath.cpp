@@ -11,9 +11,11 @@
 
 #include <lyxview/config.h>
 
-#include "InsetMath.h"
-#include "MathData.h"
-#include "MathStream.h"
+#include <lyxview/mathed/InsetMath.h>
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/mathed/MathData.h>
+#include <lyxview/mathed/MathStream.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/debug.h>
 #include <lyxview/support/docstream.h>

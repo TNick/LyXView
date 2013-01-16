@@ -17,16 +17,17 @@
 
 #ifdef	INCLUDE_ORIGINAL
 
-#include "Author.h"
-#include "Session.h"
-#include "output_latex.h"
-#include <lyxview/para/ParagraphList.h>
+#include <lyxview/logic/Author.h>
+#include <lyxview/logic/Session.h>
+#include <lyxview/output/output_latex.h>
 
 
 #include <lyxview/support/gettext.h>
 #include <lyxview/support/Package.h>
 
 #endif	// INCLUDE_ORIGINAL
+
+#include <lyxview/para/ParagraphList.h>
 
 #include <lyxview/support/bind.h>
 

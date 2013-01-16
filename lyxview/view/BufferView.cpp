@@ -14,7 +14,7 @@
 
 #include <lyxview/config.h>
 
-#include "BufferView.h"
+#include <lyxview/view/BufferView.h>
 
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/BufferList.h>

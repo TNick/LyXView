@@ -10,8 +10,10 @@
 
 #include <lyxview/config.h>
 
-#include "FuncRequest.h"
-#include "LyXAction.h"
+#include <lyxview/func/FuncRequest.h>
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/LyXAction.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/lstrings.h>
 

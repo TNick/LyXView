@@ -11,7 +11,7 @@
 
 #include <lyxview/config.h>
 
-#include "Spacing.h"
+#include <lyxview/metrics/Spacing.h>
 #include <lyxview/support/lstrings.h>
 #include <lyxview/support/convert.h>
 

@@ -12,7 +12,7 @@
 #ifndef PARITERATOR_H
 #define PARITERATOR_H
 
-#include "DocIterator.h"
+#include <lyxview/logic/DocIterator.h>
 
 #include <lyxview/support/types.h>
 

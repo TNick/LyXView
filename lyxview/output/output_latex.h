@@ -16,7 +16,7 @@
 
 #include <lyxview/support/docstream.h>
 #include <lyxview/para/Paragraph.h>
-#include "ParIterator.h"
+#include <lyxview/para/ParIterator.h>
 #include <lyxview/para/ParagraphList.h>
 
 

@@ -13,13 +13,13 @@
 #ifdef	INCLUDE_ORIGINAL
 
 #include "Citation.h"
-#include "ColorCode.h"
+#include <lyxview/logic/ColorCode.h>
 #include <lyxview/logic/Counters.h>
-#include "FloatList.h"
+#include <lyxview/logic/FloatList.h>
 #include "LayoutModuleList.h"
 
 #endif	// INCLUDE_ORIGINAL
-#include "FontInfo.h"
+#include <lyxview/logic/FontInfo.h>
 
 #include <lyxview/logic/Layout.h>
 #include "LayoutEnums.h"

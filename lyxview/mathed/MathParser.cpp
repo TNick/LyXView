@@ -37,39 +37,41 @@ following hack as starting point to write some macros:
 
 #include <lyxview/config.h>
 
-#include "MathParser.h"
+#include <lyxview/mathed/MathParser.h>
+#include <lyxview/mathed/InsetMathRef.h>
 
-#include "InsetMathArray.h"
-#include "InsetMathBig.h"
-#include "InsetMathBrace.h"
-#include "InsetMathCancelto.h"
-#include "InsetMathChar.h"
-#include "InsetMathColor.h"
-#include "InsetMathComment.h"
-#include "InsetMathDelim.h"
-#include "InsetMathEnsureMath.h"
-#include "InsetMathEnv.h"
-#include "InsetMathFrac.h"
-#include "InsetMathKern.h"
-#include "MathMacro.h"
-#include "InsetMathPar.h"
-#include "InsetMathRef.h"
-#include "InsetMathRoot.h"
-#include "InsetMathScript.h"
-#include "InsetMathSpace.h"
-#include "InsetMathSplit.h"
-#include "InsetMathSqrt.h"
-#include "InsetMathString.h"
-#include "InsetMathTabular.h"
-#include "MathMacroTemplate.h"
-#include "MathFactory.h"
-#include "MathMacroArgument.h"
-#include "MathSupport.h"
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/mathed/InsetMathArray.h>
+#include <lyxview/mathed/InsetMathBig.h>
+#include <lyxview/mathed/InsetMathBrace.h>
+#include <lyxview/mathed/InsetMathCancelto.h>
+#include <lyxview/mathed/InsetMathChar.h>
+#include <lyxview/mathed/InsetMathColor.h>
+#include <lyxview/mathed/InsetMathComment.h>
+#include <lyxview/mathed/InsetMathDelim.h>
+#include <lyxview/mathed/InsetMathEnsureMath.h>
+#include <lyxview/mathed/InsetMathEnv.h>
+#include <lyxview/mathed/InsetMathFrac.h>
+#include <lyxview/mathed/InsetMathKern.h>
+#include <lyxview/mathed/MathMacro.h>
+#include <lyxview/mathed/InsetMathPar.h>
+#include <lyxview/mathed/InsetMathRoot.h>
+#include <lyxview/mathed/InsetMathScript.h>
+#include <lyxview/mathed/InsetMathSpace.h>
+#include <lyxview/mathed/InsetMathSplit.h>
+#include <lyxview/mathed/InsetMathSqrt.h>
+#include <lyxview/mathed/InsetMathString.h>
+#include <lyxview/mathed/InsetMathTabular.h>
+#include <lyxview/mathed/MathMacroTemplate.h>
+#include <lyxview/mathed/MathFactory.h>
+#include <lyxview/mathed/MathMacroArgument.h>
+#include <lyxview/mathed/MathSupport.h>
+#include <lyxview/logic/Lexer.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/BufferParams.h>
 #include <lyxview/logic/Encoding.h>
-#include "Lexer.h"
 
 #include <lyxview/support/debug.h>
 #include <lyxview/support/convert.h>

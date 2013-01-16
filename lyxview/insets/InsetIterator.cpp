@@ -11,7 +11,7 @@
 
 #include <lyxview/config.h>
 
-#include "InsetIterator.h"
+#include <lyxview/insets/InsetIterator.h>
 
 #include <lyxview/support/lassert.h>
 

@@ -12,7 +12,7 @@
 #ifndef FUNCREQUEST_H
 #define FUNCREQUEST_H
 
-#include "FuncCode.h"
+#include <lyxview/func/FuncCode.h>
 
 #include <lyxview/support/docstring.h>
 

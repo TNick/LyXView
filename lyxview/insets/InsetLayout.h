@@ -15,8 +15,8 @@
 
 #ifdef	INCLUDE_ORIGINAL
 
-#include "ColorCode.h"
-#include "FontInfo.h"
+#include <lyxview/logic/ColorCode.h>
+#include <lyxview/logic/FontInfo.h>
 #endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/docstring.h>

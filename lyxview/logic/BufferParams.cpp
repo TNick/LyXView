@@ -16,33 +16,28 @@
 #include <lyxview/config.h>
 
 #include <lyxview/logic/BufferParams.h>
+#include <lyxview/logic/buffer_funcs.h>
 
 #ifdef	INCLUDE_ORIGINAL
 
-#include "Author.h"
-#include "LayoutFile.h"
-#include "BranchList.h"
-#include <lyxview/logic/buffer_funcs.h>
-#include "Bullet.h"
-#include "Color.h"
-#include "ColorSet.h"
-#include "Converter.h"
-#include <lyxview/logic/Encoding.h>
-#include "HSpace.h"
-#include "IndicesList.h"
+#include <lyxview/logic/Author.h>
+#include <lyxview/logic/LayoutFile.h>
+#include <lyxview/logic/BranchList.h>
+#include <lyxview/logic/Bullet.h>
+#include <lyxview/logic/Color.h>
+#include <lyxview/logic/ColorSet.h>
+#include <lyxview/logic/HSpace.h>
+#include <lyxview/logic/IndicesList.h>
 #include <lyxview/logic/Language.h>
-#include "LaTeXFeatures.h"
-#include "ModuleList.h"
-#include <lyxview/logic/Font.h>
-#include "Lexer.h"
+#include <lyxview/logic/LaTeXFeatures.h>
+#include <lyxview/logic/ModuleList.h>
+#include <lyxview/logic/Lexer.h>
 #include <lyxview/logic/LyXRC.h>
-#include <lyxview/output/OutputParams.h>
-#include "Spacing.h"
 #include <lyxview/logic/TexRow.h>
-#include "VSpace.h"
-#include "PDFOptions.h"
+#include <lyxview/logic/PDFOptions.h>
+#include <lyxview/logic/Converter.h>
 
-#include <lyxview/frontends/alert.h>
+#include <lyxview/logic/VSpace.h>
 
 #include <lyxview/insets/InsetListingsParams.h>
 
@@ -50,6 +45,12 @@
 #include <lyxview/support/Messages.h>
 #include <lyxview/support/Translator.h>
 #endif	// INCLUDE_ORIGINAL
+
+#include <lyxview/logic/Encoding.h>
+#include <lyxview/logic/Font.h>
+#include <lyxview/output/OutputParams.h>
+#include <lyxview/metrics/Spacing.h>
+#include <lyxview/frontends/alert.h>
 
 #include <lyxview/support/convert.h>
 #include <lyxview/support/debug.h>

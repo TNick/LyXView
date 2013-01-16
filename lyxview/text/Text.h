@@ -14,7 +14,7 @@
 #ifndef TEXT_H
 #define TEXT_H
 
-#include "DocIterator.h"
+#include <lyxview/logic/DocIterator.h>
 #include <lyxview/para/ParagraphList.h>
 
 namespace lyx {

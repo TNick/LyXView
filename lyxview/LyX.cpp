@@ -17,7 +17,7 @@
 #include <version.h>
 #endif	// INCLUDE_ORIGINAL
 
-#include "LyX.h"
+#include <lyxview/LyX.h>
 
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/BufferList.h>
@@ -28,26 +28,26 @@
 #include "AppleSpellChecker.h"
 #include "AspellChecker.h"
 #include "CmdDef.h"
-#include "ColorSet.h"
+#include <lyxview/logic/ColorSet.h>
 #include "ConverterCache.h"
-#include "Converter.h"
-#include "CutAndPaste.h"
+#include <lyxview/logic/Converter.h>
+#include <lyxview/logic/CutAndPaste.h>
 #include "EnchantChecker.h"
 #include <lyxview/logic/Encoding.h>
-#include "ErrorList.h"
+#include <lyxview/logic/ErrorList.h>
 #include "Format.h"
 #include "HunspellChecker.h"
 #include "KeyMap.h"
-#include "LayoutFile.h"
-#include "Lexer.h"
-#include "LyX.h"
-#include "LyXAction.h"
+#include <lyxview/logic/LayoutFile.h>
+#include <lyxview/logic/Lexer.h>
+#include <lyxview/LyX.h>
+#include <lyxview/logic/LyXAction.h>
 #include <lyxview/logic/LyXRC.h>
-#include "ModuleList.h"
+#include <lyxview/logic/ModuleList.h>
 #include "Mover.h"
 #include "Server.h"
 #include "ServerSocket.h"
-#include "Session.h"
+#include <lyxview/logic/Session.h>
 #include "WordList.h"
 
 #include <lyxview/frontends/alert.h>

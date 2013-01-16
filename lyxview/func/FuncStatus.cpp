@@ -10,7 +10,7 @@
 
 #include <lyxview/config.h>
 
-#include "FuncStatus.h"
+#include <lyxview/func/FuncStatus.h>
 
 
 namespace lyx {

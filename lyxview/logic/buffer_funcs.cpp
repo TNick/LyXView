@@ -14,37 +14,39 @@
 
 #include <lyxview/logic/buffer_funcs.h>
 #include <lyxview/logic/Buffer.h>
-#include "BufferList.h"
+#include <lyxview/logic/BufferList.h>
 #include <lyxview/logic/BufferParams.h>
-#include "DocIterator.h"
+#include <lyxview/logic/DocIterator.h>
 #include <lyxview/logic/Counters.h>
-#include "ErrorList.h"
-#include "Floating.h"
-#include "FloatList.h"
 #include <lyxview/insets/InsetList.h>
 #include <lyxview/logic/Language.h>
-#include "LaTeX.h"
 #include <lyxview/logic/Layout.h>
-#include "LyX.h"
+#include <lyxview/LyX.h>
 #include <lyxview/text/TextClass.h>
 #include <lyxview/para/Paragraph.h>
 #include <lyxview/para/ParagraphList.h>
 #include <lyxview/para/ParagraphParameters.h>
-#include "ParIterator.h"
-#include <lyxview/logic/TexRow.h>
+#include <lyxview/para/ParIterator.h>
 #include <lyxview/text/Text.h>
-#include "TocBackend.h"
 
 #include <lyxview/frontends/alert.h>
 
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/ErrorList.h>
+#include <lyxview/logic/Floating.h>
+#include <lyxview/logic/FloatList.h>
+#include <lyxview/logic/LaTeX.h>
+#include <lyxview/logic/TexRow.h>
+#include <lyxview/logic/TocBackend.h>
 #include <lyxview/insets/InsetBibitem.h>
 #include <lyxview/insets/InsetInclude.h>
+#include <lyxview/support/gettext.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/lassert.h>
 #include <lyxview/support/convert.h>
 #include <lyxview/support/debug.h>
 #include <lyxview/support/filetools.h>
-#include <lyxview/support/gettext.h>
 #include <lyxview/support/lstrings.h>
 #include <lyxview/support/textutils.h>
 

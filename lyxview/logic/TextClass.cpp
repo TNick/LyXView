@@ -17,21 +17,21 @@
 #include <lyxview/text/TextClass.h>
 
 #include <lyxview/logic/Layout.h>
+#include <lyxview/logic/Counters.h>
 
 #ifdef	INCLUDE_ORIGINAL
 
-#include "LayoutFile.h"
-#include <lyxview/logic/Counters.h>
-#include "Floating.h"
-#include "FloatList.h"
-#include "Lexer.h"
-#include "ModuleList.h"
+#include <lyxview/logic/LayoutFile.h>
+#include <lyxview/logic/Floating.h>
+#include <lyxview/logic/FloatList.h>
+#include <lyxview/logic/Lexer.h>
+#include <lyxview/logic/ModuleList.h>
 
 #include <lyxview/support/gettext.h>
 
 #endif	// INCLUDE_ORIGINAL
 
-#include "Color.h"
+#include <lyxview/logic/Color.h>
 #include <lyxview/logic/Font.h>
 
 

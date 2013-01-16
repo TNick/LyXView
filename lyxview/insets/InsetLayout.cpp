@@ -14,12 +14,11 @@
 
 #include "InsetLayout.h"
 
-#ifdef	INCLUDE_ORIGINAL
-
-#include "ColorSet.h"
-#include "Lexer.h"
+#include <lyxview/logic/ColorSet.h>
 #include <lyxview/text/TextClass.h>
 
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/Lexer.h>
 #endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/debug.h>

@@ -15,8 +15,8 @@
 #ifndef FONT_H
 #define FONT_H
 
-#include "ColorCode.h"
-#include "FontInfo.h"
+#include <lyxview/logic/ColorCode.h>
+#include <lyxview/logic/FontInfo.h>
 
 #include <lyxview/support/strfwd.h>
 

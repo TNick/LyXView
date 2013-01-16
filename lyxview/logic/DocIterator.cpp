@@ -12,17 +12,22 @@
 
 #include <lyxview/config.h>
 
-#include "DocIterator.h"
+#include <lyxview/logic/DocIterator.h>
 
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/insets/InsetList.h>
 #include <lyxview/para/Paragraph.h>
-#include <lyxview/logic/LyXRC.h>
 #include <lyxview/text/Text.h>
 
-#include "mathed/MathData.h"
-#include "mathed/InsetMath.h"
-#include "mathed/InsetMathHull.h"
+
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/LyXRC.h>
+
+#include <lyxview/mathed/MathData.h>
+#include <lyxview/mathed/InsetMathHull.h>
+#endif	// INCLUDE_ORIGINAL
+
+#include <lyxview/mathed/InsetMath.h>
 
 #include <lyxview/insets/InsetTabular.h>
 

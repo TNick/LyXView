@@ -13,7 +13,7 @@
 #ifndef MATH_PARSER_H
 #define MATH_PARSER_H
 
-#include "MathParser_flags.h"
+#include <lyxview/mathed/MathParser_flags.h>
 
 #include <lyxview/support/types.h>
 #include <lyxview/support/docstring.h>

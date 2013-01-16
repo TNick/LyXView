@@ -10,12 +10,12 @@
 
 #include <lyxview/config.h>
 
-#include "output_plaintext.h"
+#include <lyxview/output/output_plaintext.h>
 
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/BufferParams.h>
 #include <lyxview/logic/Layout.h>
-#include "output.h"
+#include <lyxview/output/output.h>
 #include <lyxview/output/OutputParams.h>
 #include <lyxview/para/Paragraph.h>
 #include <lyxview/para/ParagraphList.h>

@@ -14,11 +14,14 @@
 
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/BufferParams.h>
-#include "FloatList.h"
-#include "FuncRequest.h"
-#include "Lexer.h"
-#include "LyX.h"
+#include <lyxview/func/FuncRequest.h>
+#include <lyxview/LyX.h>
 #include <lyxview/text/TextClass.h>
+
+#ifdef	INCLUDE_ORIGINAL
+
+#include <lyxview/logic/FloatList.h>
+#include <lyxview/logic/Lexer.h>
 
 #include <lyxview/insets/InsetBibitem.h>
 #include <lyxview/insets/InsetBibtex.h>
@@ -52,13 +55,17 @@
 #include <lyxview/insets/InsetRef.h>
 #include <lyxview/insets/InsetScript.h>
 #include <lyxview/insets/InsetSpace.h>
-#include <lyxview/insets/InsetTabular.h>
 #include <lyxview/insets/InsetTOC.h>
 #include <lyxview/insets/InsetVSpace.h>
 #include <lyxview/insets/InsetWrap.h>
 
-#include "mathed/MathMacroTemplate.h"
-#include "mathed/InsetMathHull.h"
+#include <lyxview/mathed/MathMacroTemplate.h>
+#include <lyxview/mathed/InsetMathHull.h>
+
+#endif	// INCLUDE_ORIGINAL
+
+#include <lyxview/insets/InsetTabular.h>
+
 
 #include <lyxview/frontends/alert.h>
 

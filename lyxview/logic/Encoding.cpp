@@ -15,11 +15,11 @@
 #include <lyxview/logic/Encoding.h>
 
 #include <lyxview/logic/Buffer.h>
-#include "BufferList.h"
+#include <lyxview/logic/BufferList.h>
+#include <lyxview/insets/InsetIterator.h>
 #ifdef	INCLUDE_ORIGINAL
-#include "InsetIterator.h"
-#include "LaTeXFeatures.h"
-#include "Lexer.h"
+#include <lyxview/logic/LaTeXFeatures.h>
+#include <lyxview/logic/Lexer.h>
 #include <lyxview/logic/LyXRC.h>
 #endif	// INCLUDE_ORIGINAL
 
