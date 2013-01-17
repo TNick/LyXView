@@ -17,6 +17,8 @@
 
 #include <lyxview/text/Text.h>
 
+#include <lyxview/logic/LyXRC.h>
+#include <lyxview/LyX.h>
 #ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/Bidi.h>
 #include <lyxview/logic/BranchList.h>
@@ -25,9 +27,7 @@
 #include <lyxview/logic/CutAndPaste.h>
 #include <lyxview/logic/ErrorList.h>
 #include <lyxview/logic/LyXAction.h>
-#include <lyxview/logic/LyX.h>
 #include <lyxview/logic/Lexer.h>
-#include <lyxview/logic/LyXRC.h>
 #endif	// INCLUDE_ORIGINAL
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/buffer_funcs.h>

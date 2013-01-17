@@ -17,8 +17,10 @@
 #ifndef PARAGRAPH_METRICS_H
 #define PARAGRAPH_METRICS_H
 
-#include "Dimension.h"
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/Dimension.h>
 #include <lyxview/logic/Row.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <map>
 #include <vector>

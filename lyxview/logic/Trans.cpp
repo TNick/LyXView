@@ -19,8 +19,8 @@
 #ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/CutAndPaste.h>
 #include <lyxview/logic/Lexer.h>
-#include <lyxview/logic/LyXRC.h>
 #endif	// INCLUDE_ORIGINAL
+#include <lyxview/logic/LyXRC.h>
 #include <lyxview/text/Text.h>
 
 #include <lyxview/support/debug.h>

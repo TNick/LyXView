@@ -16,9 +16,7 @@
 #include <lyxview/config.h>
 
 #include <lyxview/metrics/Length.h>
-#ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/LyXRC.h>
-#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/docstream.h>
 

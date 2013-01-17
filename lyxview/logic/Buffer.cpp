@@ -32,6 +32,11 @@
 #include <lyxview/text/Text.h>
 #include <lyxview/text/TextClass.h>
 
+#include <lyxview/logic/LyXRC.h>
+#include <lyxview/logic/Bullet.h>
+#include <lyxview/output/output_latex.h>
+#include <lyxview/output/output_xhtml.h>
+#include <lyxview/output/output_plaintext.h>
 #ifdef	INCLUDE_ORIGINAL
 
 #include <lyxview/logic/TexStream.h>
@@ -39,7 +44,6 @@
 #include <lyxview/logic/LayoutFile.h>
 #include "BiblioInfo.h"
 #include <lyxview/logic/BranchList.h>
-#include <lyxview/logic/Bullet.h>
 #include "Chktex.h"
 #include <lyxview/logic/Converter.h>
 #include "DispatchResult.h"
@@ -52,11 +56,7 @@
 #include <lyxview/logic/Layout.h>
 #include <lyxview/logic/Lexer.h>
 #include <lyxview/logic/LyXAction.h>
-#include <lyxview/logic/LyXRC.h>
 #include "LyXVC.h"
-#include <lyxview/output/output_latex.h>
-#include <lyxview/output/output_xhtml.h>
-#include <lyxview/output/output_plaintext.h>
 #include <lyxview/logic/PDFOptions.h>
 #include "SpellChecker.h"
 #include <lyxview/logic/sgml.h>
@@ -74,10 +74,6 @@
 #include <lyxview/insets/InsetTabular.h>
 #include <lyxview/insets/InsetText.h>
 
-#include <lyxview/mathed/InsetMathHull.h>
-#include <lyxview/mathed/MacroTable.h>
-#include <lyxview/mathed/MathMacroTemplate.h>
-#include <lyxview/mathed/MathSupport.h>
 
 #include <lyxview/graphics/PreviewLoader.h>
 
@@ -94,6 +90,12 @@
 #include <lyxview/support/lyxalgo.h>
 
 #endif	// INCLUDE_ORIGINAL
+
+#include <lyxview/mathed/InsetMathHull.h>
+#include <lyxview/mathed/MacroTable.h>
+#include <lyxview/mathed/MathMacroTemplate.h>
+#include <lyxview/mathed/MathSupport.h>
+
 
 #include <lyxview/support/docstring_list.h>
 #include <lyxview/support/lstrings.h>

@@ -20,11 +20,11 @@
 
 #include <lyxview/para/Paragraph.h>
 
+#include <lyxview/logic/LyXRC.h>
 #ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/sgml.h>
 #include <lyxview/logic/LayoutFile.h>
 #include <lyxview/logic/LaTeXFeatures.h>
-#include <lyxview/logic/LyXRC.h>
-#include <lyxview/logic/sgml.h>
 #include <lyxview/logic/TexRow.h>
 #include <lyxview/logic/WordLangTuple.h>
 #include <lyxview/logic/WordList.h>

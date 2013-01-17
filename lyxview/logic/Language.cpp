@@ -18,8 +18,8 @@
 #include <lyxview/logic/Encoding.h>
 #ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/Lexer.h>
-#include <lyxview/logic/LyXRC.h>
 #endif	// INCLUDE_ORIGINAL
+#include <lyxview/logic/LyXRC.h>
 
 #include <lyxview/support/debug.h>
 #include <lyxview/support/FileName.h>

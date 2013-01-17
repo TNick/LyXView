@@ -19,9 +19,9 @@
 
 #include <lyxview/para/ParagraphMetrics.h>
 
+#include <lyxview/logic/LyXRC.h>
 #ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/LaTeXFeatures.h>
-#include <lyxview/logic/LyXRC.h>
 #include <lyxview/logic/Row.h>
 #include <lyxview/logic/OutputParams.h>
 #include <lyxview/logic/sgml.h>

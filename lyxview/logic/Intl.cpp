@@ -15,9 +15,7 @@
 
 #include <lyxview/logic/Intl.h>
 
-#ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/LyXRC.h>
-#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/debug.h>
 

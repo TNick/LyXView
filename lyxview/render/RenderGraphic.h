@@ -14,8 +14,10 @@
 
 #include "RenderBase.h"
 
-#include "graphics/GraphicsLoader.h"
-#include "graphics/GraphicsParams.h"
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/graphics/GraphicsLoader.h>
+#include <lyxview/graphics/GraphicsParams.h>
+#endif	// INCLUDE_ORIGINAL
 
 
 namespace lyx {

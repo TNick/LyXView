@@ -40,11 +40,11 @@
 #include <lyxview/para/ParIterator.h>
 #include <lyxview/text/TextClass.h>
 #include <lyxview/text/TextMetrics.h>
+#include <lyxview/logic/LyXRC.h>
 #ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/CutAndPaste.h>
 #include <lyxview/LaTeXFeatures.h>
 #include <lyxview/Lexer.h>
-#include <lyxview/LyXRC.h>
 #include <lyxview/logic/OutputParams.h>
 #endif	// INCLUDE_ORIGINAL
 

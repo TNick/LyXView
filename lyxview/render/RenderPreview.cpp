@@ -18,10 +18,10 @@
 #include <lyxview/LyX.h>
 #include <lyxview/metrics/MetricsInfo.h>
 
+#include <lyxview/logic/LyXRC.h>
 #ifdef	INCLUDE_ORIGINAL
 #include <lyxview/insets/RenderPreview.h>
 
-#include <lyxview/LyXRC.h>
 
 #include <lyxview/frontends/FontMetrics.h>
 #include <lyxview/frontends/Painter.h>

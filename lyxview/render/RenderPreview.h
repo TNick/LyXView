@@ -19,7 +19,9 @@
 #include "RenderBase.h"
 
 #include <lyxview/support/docstring.h>
+#ifdef	INCLUDE_ORIGINAL
 #include <lyxview/support/FileMonitor.h>
+#endif	// INCLUDE_ORIGINAL
 
 #include <boost/signal.hpp>
 #include <boost/signals/trackable.hpp>

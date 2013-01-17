@@ -19,12 +19,12 @@
 
 #include <lyxview/text/TextMetrics.h>
 
+#include <lyxview/logic/LyXRC.h>
 #ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/Bidi.h>
 #include <lyxview/logic/CutAndPaste.h>
 #include <lyxview/logic/HSpace.h>
 #include <lyxview/logic/InsetList.h>
-#include <lyxview/logic/LyXRC.h>
 #include <lyxview/logic/rowpainter.h>
 #include <lyxview/logic/VSpace.h>
 #include <lyxview/logic/WordLangTuple.h>

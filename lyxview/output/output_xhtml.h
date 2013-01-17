@@ -12,7 +12,7 @@
 #ifndef OUTPUT_XHTML_H
 #define OUTPUT_XHTML_H
 
-#include "LayoutEnums.h"
+#include <lyxview/logic/LayoutEnums.h>
 #include <lyxview/support/docstream.h>
 #include <lyxview/support/strfwd.h>
 

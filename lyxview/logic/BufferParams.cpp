@@ -18,26 +18,26 @@
 #include <lyxview/logic/BufferParams.h>
 #include <lyxview/logic/buffer_funcs.h>
 
+#include <lyxview/logic/LyXRC.h>
+#include <lyxview/logic/Bullet.h>
+#include <lyxview/logic/HSpace.h>
+#include <lyxview/logic/VSpace.h>
 #ifdef	INCLUDE_ORIGINAL
 
 #include <lyxview/logic/Author.h>
 #include <lyxview/logic/LayoutFile.h>
 #include <lyxview/logic/BranchList.h>
-#include <lyxview/logic/Bullet.h>
 #include <lyxview/logic/Color.h>
 #include <lyxview/logic/ColorSet.h>
-#include <lyxview/logic/HSpace.h>
 #include <lyxview/logic/IndicesList.h>
 #include <lyxview/logic/Language.h>
 #include <lyxview/logic/LaTeXFeatures.h>
 #include <lyxview/logic/ModuleList.h>
 #include <lyxview/logic/Lexer.h>
-#include <lyxview/logic/LyXRC.h>
 #include <lyxview/logic/TexRow.h>
 #include <lyxview/logic/PDFOptions.h>
 #include <lyxview/logic/Converter.h>
 
-#include <lyxview/logic/VSpace.h>
 
 #include <lyxview/insets/InsetListingsParams.h>
 

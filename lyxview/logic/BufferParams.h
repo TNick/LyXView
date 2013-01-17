@@ -25,8 +25,9 @@
 
 #include <lyxview/insets/InsetQuotes.h>
 
-#include <lyxview/support/copied_ptr.h>
 #endif	// INCLUDE_ORIGINAL
+
+#include <lyxview/support/copied_ptr.h>
 
 #include <map>
 #include <vector>
@@ -37,24 +38,23 @@ namespace support { class FileName; }
 
 class DocumentClass;
 
+class Font;
+class HSpace;
+class VSpace;
+class Spacing;
+class IndicesList;
+class Language;
 #ifdef	INCLUDE_ORIGINAL
-
 class AuthorList;
 class BranchList;
 class Bullet;
 class Encoding;
-class Font;
-class HSpace;
-class IndicesList;
-class Language;
 class LatexFeatures;
 class LayoutFile;
 class LayoutFileIndex;
 class Lexer;
 class PDFOptions;
-class Spacing;
 class TexRow;
-class VSpace;
 #endif	// INCLUDE_ORIGINAL
 
 /** Buffer parameters.
@@ -99,7 +99,6 @@ public:
 #endif	// INCLUDE_ORIGINAL
 	///
 	void useClassDefaults();
-#ifdef	INCLUDE_ORIGINAL
 	///
 	bool hasClassDefaults() const;
 
@@ -116,12 +115,15 @@ public:
 	 *  articles or by using a little skip like in letters.
 	 */
 	ParagraphSeparation paragraph_separation;
+#ifdef	INCLUDE_ORIGINAL
 	///
 	InsetQuotes::QuoteLanguage quotes_language;
 	///
 	InsetQuotes::QuoteTimes quotes_times;
+#endif	// INCLUDE_ORIGINAL
 	///
 	std::string fontsize;
+#ifdef	INCLUDE_ORIGINAL
 	/// Get the LayoutFile this document is using.
 	LayoutFile const * baseClass() const;
 	///
@@ -363,6 +365,7 @@ public:
 	void use_package(std::string const & p, Package u);
 	/// All packages that can be switched on or off
 	static std::vector<std::string> const & auto_packages();
+#endif	// INCLUDE_ORIGINAL
 	/// Split bibliography?
 	bool use_bibtopic;
 	/// Split the index?
@@ -376,6 +379,7 @@ public:
 	bool outputChanges;
 	///
 	bool compressed;
+#ifdef	INCLUDE_ORIGINAL
 
 	/// the author list for the document
 	AuthorList & authors();
@@ -536,14 +540,12 @@ private:
 	 *  drag in other header files.
 	 */
 	class Impl;
-#ifdef	INCLUDE_ORIGINAL
 	class MemoryTraits {
 	public:
 		static Impl * clone(Impl const *);
 		static void destroy(Impl *);
 	};
 	support::copied_ptr<Impl, MemoryTraits> pimpl_;
-#endif	// INCLUDE_ORIGINAL
 
 };
 

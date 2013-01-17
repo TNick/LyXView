@@ -13,7 +13,7 @@
 #define REF_INSET_H
 
 
-#include "CommandInset.h"
+#include <lyxview/mathed/CommandInset.h>
 
 
 namespace lyx {

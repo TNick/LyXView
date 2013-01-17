@@ -158,7 +158,9 @@ TextClass::TextClass()
 	opt_enginetype_ = "authoryear|numerical";
 	opt_fontsize_ = "10|11|12";
 	opt_pagestyle_ = "empty|plain|headings|fancy";
+#ifdef	INCLUDE_ORIGINAL
 	cite_full_author_list_ = true;
+#endif	// INCLUDE_ORIGINAL
 	titletype_ = TITLE_COMMAND_AFTER;
 	titlename_ = "maketitle";
 	loaded_ = false;

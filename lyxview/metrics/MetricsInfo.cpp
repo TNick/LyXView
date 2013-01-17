@@ -12,7 +12,7 @@
 
 #include <lyxview/view/BufferView.h>
 #include <lyxview/logic/ColorSet.h>
-#include "MetricsInfo.h"
+#include <lyxview/metrics/MetricsInfo.h>
 
 #include <lyxview/insets/Inset.h>
 

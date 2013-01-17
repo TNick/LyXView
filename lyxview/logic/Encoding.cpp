@@ -17,10 +17,10 @@
 #include <lyxview/logic/Buffer.h>
 #include <lyxview/logic/BufferList.h>
 #include <lyxview/insets/InsetIterator.h>
+#include <lyxview/logic/LyXRC.h>
 #ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/LaTeXFeatures.h>
 #include <lyxview/logic/Lexer.h>
-#include <lyxview/logic/LyXRC.h>
 #endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/debug.h>

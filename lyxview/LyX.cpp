@@ -24,6 +24,8 @@
 #include <lyxview/logic/Language.h>
 #include <lyxview/func/FuncStatus.h>
 
+#include <lyxview/LyX.h>
+#include <lyxview/logic/LyXRC.h>
 #ifdef	INCLUDE_ORIGINAL
 #include "AppleSpellChecker.h"
 #include "AspellChecker.h"
@@ -40,9 +42,7 @@
 #include "KeyMap.h"
 #include <lyxview/logic/LayoutFile.h>
 #include <lyxview/logic/Lexer.h>
-#include <lyxview/LyX.h>
 #include <lyxview/logic/LyXAction.h>
-#include <lyxview/logic/LyXRC.h>
 #include <lyxview/logic/ModuleList.h>
 #include "Mover.h"
 #include "Server.h"
@@ -50,9 +50,9 @@
 #include <lyxview/logic/Session.h>
 #include "WordList.h"
 
-#include <lyxview/frontends/alert.h>
 #include <lyxview/frontends/Application.h>
 #endif	// INCLUDE_ORIGINAL
+#include <lyxview/frontends/alert.h>
 
 #include <lyxview/support/lassert.h>
 #include <lyxview/support/debug.h>

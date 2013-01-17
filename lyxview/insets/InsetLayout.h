@@ -13,11 +13,8 @@
 #ifndef INSET_LAYOUT_H
 #define INSET_LAYOUT_H
 
-#ifdef	INCLUDE_ORIGINAL
-
 #include <lyxview/logic/ColorCode.h>
 #include <lyxview/logic/FontInfo.h>
-#endif	// INCLUDE_ORIGINAL
 
 #include <lyxview/support/docstring.h>
 
@@ -63,6 +60,7 @@ public:
 
 	///
 	bool read(Lexer & lexrc, TextClass const & tclass);
+#endif	// INCLUDE_ORIGINAL
 	///
 	docstring name() const { return name_; }
 	///
@@ -139,7 +137,6 @@ public:
 	bool parbreakIsNewline() const { return parbreakisnewline_; }
 	///
 	bool isNeedProtect() const { return needprotect_; }
-#endif	// INCLUDE_ORIGINAL
 	///
 	bool isFreeSpacing() const { return freespacing_; }
 	///
@@ -154,7 +151,6 @@ public:
 	bool resetsFont() const { return resetsfont_; }
 	///
 	bool isDisplay() const { return display_; }
-#ifdef	INCLUDE_ORIGINAL
 private:
 	///
 	void makeDefaultCSS() const;
@@ -229,6 +225,7 @@ private:
 	bool passthru_;
 	///
 	bool parbreakisnewline_;
+#ifdef	INCLUDE_ORIGINAL
 #endif	// INCLUDE_ORIGINAL
 
 	///

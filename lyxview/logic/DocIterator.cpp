@@ -20,8 +20,8 @@
 #include <lyxview/text/Text.h>
 
 
-#ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/LyXRC.h>
+#ifdef	INCLUDE_ORIGINAL
 
 #include <lyxview/mathed/MathData.h>
 #include <lyxview/mathed/InsetMathHull.h>

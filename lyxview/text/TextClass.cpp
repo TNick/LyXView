@@ -12,29 +12,33 @@
  * Full author contact details are available in file CREDITS.
  */
 
-#include <config.h>
+#include <lyxview/config.h>
 
-#include "TextClass.h"
+#include <lyxview/logic/TextClass.h>
 
-#include "LayoutFile.h"
-#include "Color.h"
-#include "Counters.h"
-#include "Floating.h"
-#include "FloatList.h"
-#include "Layout.h"
-#include "Lexer.h"
-#include "Font.h"
-#include "ModuleList.h"
+#include <lyxview/logic/Color.h>
+#include <lyxview/logic/Counters.h>
+#include <lyxview/logic/Floating.h>
+#include <lyxview/logic/FloatList.h>
+#include <lyxview/logic/Layout.h>
+#include <lyxview/logic/Font.h>
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/LayoutFile.h>
+#include <lyxview/logic/Lexer.h>
+#include <lyxview/logic/ModuleList.h>
+#endif	// INCLUDE_ORIGINAL
 
-#include "frontends/alert.h"
+#include <lyxview/frontends/alert.h>
 
-#include "support/lassert.h"
-#include "support/debug.h"
-#include "support/FileName.h"
-#include "support/filetools.h"
-#include "support/gettext.h"
-#include "support/lstrings.h"
-#include "support/os.h"
+#include <lyxview/support/lassert.h>
+#include <lyxview/support/debug.h>
+#include <lyxview/support/FileName.h>
+#include <lyxview/support/filetools.h>
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/support/gettext.h>
+#endif	// INCLUDE_ORIGINAL
+#include <lyxview/support/lstrings.h>
+#include <lyxview/support/os.h>
 
 #include <algorithm>
 #include <fstream>

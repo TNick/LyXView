@@ -10,19 +10,21 @@
 #ifndef TEXTCLASS_H
 #define TEXTCLASS_H
 
-#include "Citation.h"
-#include "ColorCode.h"
-#include "Counters.h"
-#include "FloatList.h"
-#include "FontInfo.h"
-#include "Layout.h"
-#include "LayoutEnums.h"
-#include "LayoutModuleList.h"
+#include <lyxview/logic/FloatList.h>
+#ifdef	INCLUDE_ORIGINAL
+#include <lyxview/logic/Citation.h>
+#include <lyxview/logic/LayoutModuleList.h>
+#endif	// INCLUDE_ORIGINAL
+#include <lyxview/logic/ColorCode.h>
+#include <lyxview/logic/Counters.h>
+#include <lyxview/logic/FontInfo.h>
+#include <lyxview/logic/Layout.h>
+#include <lyxview/logic/LayoutEnums.h>
 
-#include "insets/InsetLayout.h"
+#include <lyxview/insets/InsetLayout.h>
 
-#include "support/docstring.h"
-#include "support/types.h"
+#include <lyxview/support/docstring.h>
+#include <lyxview/support/types.h>
 
 #include <boost/noncopyable.hpp>
 
@@ -126,10 +128,10 @@ public:
 	/// returns a special layout for use when we don't really want one,
 	/// e.g., in table cells
 	Layout const & plainLayout() const
-			{ return operator[](plain_layout_); }
+	{ return operator[](plain_layout_); }
 	/// the name of the plain layout
 	docstring const & plainLayoutName() const
-			{ return plain_layout_; }
+	{ return plain_layout_; }
 	/// Enumerate the paragraph styles.
 	size_t layoutCount() const { return layoutlist_.size(); }
 	///
@@ -205,11 +207,11 @@ protected:
 	///
 	Layout & operator[](docstring const & name);
 	/** Create an new, very basic layout for this textclass. This is used for
-	    the Plain Layout common to all TextClass objects and also, in
-	    DocumentClass, for the creation of new layouts `on the fly' when
-	    previously unknown layouts are encountered.
-	    \param unknown Set to true if this layout is used to represent an
-	    unknown layout
+		the Plain Layout common to all TextClass objects and also, in
+		DocumentClass, for the creation of new layouts `on the fly' when
+		previously unknown layouts are encountered.
+		\param unknown Set to true if this layout is used to represent an
+		unknown layout
 	 */
 	Layout createBasicLayout(docstring const & name, bool unknown = false) const;
 
@@ -275,12 +277,14 @@ protected:
 	std::set<std::string> provides_;
 	/// latex packages requested by document class.
 	std::set<std::string> requires_;
+#ifdef	INCLUDE_ORIGINAL
 	/// default modules wanted by document class
 	LayoutModuleList default_modules_;
 	/// modules provided by document class
 	LayoutModuleList provided_modules_;
 	/// modules excluded by document class
 	LayoutModuleList excluded_modules_;
+#endif	// INCLUDE_ORIGINAL
 	///
 	unsigned int columns_;
 	///
@@ -294,9 +298,9 @@ protected:
 	/// Can be latex, docbook ... (the name of a format)
 	std::string outputFormat_;
 	/** Base font. The paragraph and layout fonts are resolved against
-	    this font. This has to be fully instantiated. Attributes
-	    FONT_INHERIT, FONT_IGNORE, and FONT_TOGGLE are
-	    extremely illegal.
+		this font. This has to be fully instantiated. Attributes
+		FONT_INHERIT, FONT_IGNORE, and FONT_TOGGLE are
+		extremely illegal.
 	*/
 	FontInfo defaultfont_;
 	/// Text that dictates how wide the left margin is on the screen
@@ -313,6 +317,7 @@ protected:
 	int min_toclevel_;
 	/// The maximal TocLevel of sectioning layouts
 	int max_toclevel_;
+#ifdef	INCLUDE_ORIGINAL
 	/// Citation formatting information
 	std::map<CiteEngineType, std::map<std::string, std::string> > cite_formats_;
 	/// Citation macros
@@ -323,6 +328,7 @@ protected:
 	bool cite_full_author_list_;
 	/// The possible citation styles
 	std::map<CiteEngineType, std::vector<CitationStyle> > cite_styles_;
+#endif	// INCLUDE_ORIGINAL
 private:
 	///////////////////////////////////////////////////////////////////
 	// helper routines for reading layout files
@@ -453,12 +459,13 @@ public:
 	int max_toclevel() const { return max_toclevel_; }
 	/// returns true if the class has a ToC structure
 	bool hasTocLevels() const;
+#ifdef	INCLUDE_ORIGINAL
 	///
 	std::string const & getCiteFormat(CiteEngineType const & type,
-		std::string const & entry, std::string const & fallback = "") const;
+									  std::string const & entry, std::string const & fallback = "") const;
 	///
 	std::string const & getCiteMacro(CiteEngineType const & type,
-		std::string const & macro) const;
+									 std::string const & macro) const;
 	///
 	std::vector<std::string> const citeCommands(CiteEngineType const &) const;
 	///
@@ -467,6 +474,7 @@ public:
 	std::string const & defaultBiblioStyle() const { return cite_default_biblio_style_; }
 	///
 	bool const & fullAuthorList() const { return cite_full_author_list_; }
+#endif	// INCLUDE_ORIGINAL
 protected:
 	/// Constructs a DocumentClass based upon a LayoutFile.
 	DocumentClass(LayoutFile const & tc);
@@ -497,8 +505,12 @@ public:
 	static DocumentClassBundle & get();
 	/// \return A new DocumentClass based on baseClass, with info added
 	/// from the modules in modlist.
-	DocumentClass & makeDocumentClass(LayoutFile const & baseClass,
-			LayoutModuleList const & modlist);
+	DocumentClass & makeDocumentClass(LayoutFile const & baseClass
+								  #ifdef	INCLUDE_ORIGINAL
+									  ,LayoutModuleList const & modlist
+								  #endif	// INCLUDE_ORIGINAL
+
+									  );
 private:
 	/// control instantiation
 	DocumentClassBundle() {}

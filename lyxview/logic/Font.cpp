@@ -21,11 +21,11 @@
 #include <lyxview/logic/Language.h>
 #include <lyxview/logic/Encoding.h>
 
+#include <lyxview/logic/LyXRC.h>
 #ifdef	INCLUDE_ORIGINAL
 
 #include <lyxview/logic/LaTeXFeatures.h>
 #include <lyxview/logic/Lexer.h>
-#include <lyxview/logic/LyXRC.h>
 
 #include <lyxview/support/gettext.h>
 #endif	// INCLUDE_ORIGINAL

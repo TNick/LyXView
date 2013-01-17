@@ -131,8 +131,10 @@ public:
 	/// append text onto the existing text
 	void appendParagraphs(ParagraphList &);
 
+#ifdef	INCLUDE_ORIGINAL
 	///
 	void addPreview(DocIterator const &, graphics::PreviewLoader &) const;
+#endif	// INCLUDE_ORIGINAL
 
 	///
 	void edit(Cursor & cur, bool front, EntryDirection entry_from);

@@ -14,11 +14,11 @@
 
 #include <lyxview/config.h>
 
+#include <lyxview/logic/LyXRC.h>
 #ifdef	INCLUDE_ORIGINAL
 #include "Bidi.h"
 #include <lyxview/logic/CutAndPaste.h>
 #include <lyxview/logic/LyXAction.h>
-#include <lyxview/logic/LyXRC.h>
 #include <lyxview/logic/Row.h>
 #include <lyxview/logic/TocBackend.h>
 #endif	// INCLUDE_ORIGINAL

@@ -15,9 +15,9 @@
 #include <lyxview/insets/Inset.h>
 
 #include <lyxview/LyX.h>
+#include <lyxview/logic/LyXRC.h>
 #ifdef	INCLUDE_ORIGINAL
 
-#include <lyxview/LyXRC.h>
 #include <lyxview/MetricsInfo.h>
 
 #include <lyxview/frontends/FontMetrics.h>

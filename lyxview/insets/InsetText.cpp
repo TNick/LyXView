@@ -27,6 +27,7 @@
 #include <lyxview/logic/Intl.h>
 #include <lyxview/logic/Language.h>
 
+#include <lyxview/logic/LyXRC.h>
 #ifdef	INCLUDE_ORIGINAL
 #include <lyxview/logic/CompletionList.h>
 #include <lyxview/logic/CutAndPaste.h>
@@ -35,7 +36,6 @@
 #include <lyxview/logic/LaTeXFeatures.h>
 #include <lyxview/logic/Lexer.h>
 #include <lyxview/logic/lyxfind.h>
-#include <lyxview/logic/LyXRC.h>
 #include <lyxview/logic/Row.h>
 #include <lyxview/logic/sgml.h>
 #include <lyxview/logic/TexRow.h>

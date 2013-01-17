@@ -15,7 +15,7 @@
 #define TEXT_METRICS_H
 
 #include <lyxview/logic/Font.h>
-#include "ParagraphMetrics.h"
+#include <lyxview/para/ParagraphMetrics.h>
 
 #include <lyxview/support/types.h>
 
