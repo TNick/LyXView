@@ -12,7 +12,7 @@
 
 #include "InsetMathSymbol.h"
 
-#include "Dimension.h"
+#include <lyxview/logic/Dimension.h>
 #include "LaTeXFeatures.h"
 #include "MathAtom.h"
 #include "MathParser.h"

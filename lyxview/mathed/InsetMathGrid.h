@@ -13,7 +13,7 @@
 #define MATH_GRID_H
 
 #include "InsetMathNest.h"
-#include "Length.h"
+#include <lyxview/metrics/Length.h>
 
 
 namespace lyx {
@@ -218,7 +218,7 @@ public:
 	//void maple(MapleStream &) const;
 	///
 	void mathmlize(MathStream &) const;
-	/// 
+	///
 	void htmlize(HtmlStream &) const;
 	///
 	void htmlize(HtmlStream &, std::string attrib) const;

@@ -14,9 +14,10 @@
 
 #include "InsetMathGrid.h"
 
-#include "Color.h"
-#include "DocIterator.h"
-#include "OutputEnums.h"
+#include <lyxview/logic/Color.h>
+#include <lyxview/logic/DocIterator.h>
+#include <lyxview/output/OutputEnums.h>
+
 
 #include <boost/scoped_ptr.hpp>
 
@@ -49,7 +50,7 @@ public:
 	mode_type currentMode() const;
 	///
 	void metrics(MetricsInfo & mi, Dimension & dim) const;
-	/// 
+	///
 	void drawBackground(PainterInfo & pi, int x, int y) const;
 	///
 	void draw(PainterInfo &, int x, int y) const;
@@ -137,7 +138,7 @@ public:
 	void htmlize(HtmlStream &) const;
 	///
 	void mathAsLatex(WriteStream &) const;
-	/// 
+	///
 	void toString(odocstream &) const;
 	///
 	void forToc(docstring &, size_t) const;
@@ -156,7 +157,7 @@ public:
 
 	///
 	static int displayMargin() { return 12; }
-	
+
 	/// Force inset into LTR environment if surroundings are RTL
 	virtual bool forceLTR() const { return true; }
 	///
@@ -185,8 +186,8 @@ private:
 	/// \param forexport: whether this is intended for export
 	/// If so, we ignore LyXRC and wait for the image to be generated.
 	void preparePreview(DocIterator const & pos,
-	                    bool forexport = false) const;
-	/// like reloadPreview, but forces load 
+						bool forexport = false) const;
+	/// like reloadPreview, but forces load
 	/// used by image export
 	void loadPreview(DocIterator const & pos) const;
 	///
@@ -257,7 +258,7 @@ public:
 	///
 	bool editable() const { return true; }
 	///
-	void edit(Cursor & cur, bool front, 
+	void edit(Cursor & cur, bool front,
 		EntryDirection entry_from = ENTRY_DIRECTION_IGNORE);
 	///
 	Inset * editXY(Cursor & cur, int x, int y);

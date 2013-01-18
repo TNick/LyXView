@@ -127,7 +127,7 @@ public:
 	/**
 	  * This is typically used after this inset is created interactively.
 	  * Intented purpose is to sanitize internal state with regard to current
-	  * Buffer. 
+	  * Buffer.
 	  **/
 	virtual void initView() {}
 	/// \return true if this inset is labeled.
@@ -155,7 +155,6 @@ public:
 	virtual InsetCommand * asInsetCommand() { return 0; }
 	/// is this inset based on the InsetCommand class?
 	virtual InsetCommand const * asInsetCommand() const { return 0; }
-#ifdef	INCLUDE_ORIGINAL
 
 	/// the real dispatcher
 	void dispatch(Cursor & cur, FuncRequest & cmd);
@@ -182,7 +181,7 @@ public:
 		FuncStatus & status) const;
 
 	/// cursor enters
-	virtual void edit(Cursor & cur, bool front, 
+	virtual void edit(Cursor & cur, bool front,
 		EntryDirection entry_from = ENTRY_DIRECTION_IGNORE);
 	/// cursor enters
 	virtual Inset * editXY(Cursor & cur, int x, int y);
@@ -225,7 +224,6 @@ public:
 	/// get the screen positions of the cursor (see note in Cursor.cpp)
 	virtual void cursorPos(BufferView const & bv,
 		CursorSlice const & sl, bool boundary, int & x, int & y) const;
-#endif	// INCLUDE_ORIGINAL
 
 	/// Allow multiple blanks
 	virtual bool isFreeSpacing() const;
@@ -236,7 +234,6 @@ public:
 	/// whether to include this inset in the strings generated for the TOC
 	virtual bool isInToc() const;
 
-#ifdef	INCLUDE_ORIGINAL
 	/// Where should we go when we press the up or down cursor key?
 	virtual bool idxUpDown(Cursor & cur, bool up) const;
 	/// Move one cell backwards
@@ -272,25 +269,23 @@ public:
 	virtual int cellXOffset(idx_type) const { return 0; }
 	/// any additional y-offset when drawing a cell?
 	virtual int cellYOffset(idx_type) const { return 0; }
-#endif	// INCLUDE_ORIGINAL
 	/// number of embedded cells
 	virtual size_t nargs() const { return 0; }
 	/// number of rows in gridlike structures
 	virtual size_t nrows() const { return 0; }
 	/// number of columns in gridlike structures
 	virtual size_t ncols() const { return 0; }
-#ifdef	INCLUDE_ORIGINAL
 	/// Is called when the cursor leaves this inset.
-	/// Returns true if cursor is now invalid, e.g. if former 
-	/// insets in higher cursor slices of \c old do not exist 
+	/// Returns true if cursor is now invalid, e.g. if former
+	/// insets in higher cursor slices of \c old do not exist
 	/// anymore.
 	/// \c old is the old cursor, the last slice points to this.
 	/// \c cur is the new cursor. Use the update flags to cause a redraw.
 	virtual bool notifyCursorLeaves(Cursor const & /*old*/, Cursor & /*cur*/)
 		{ return false; }
 	/// Is called when the cursor enters this inset.
-	/// Returns true if cursor is now invalid, e.g. if former 
-	/// insets in higher cursor slices of \c old do not exist 
+	/// Returns true if cursor is now invalid, e.g. if former
+	/// insets in higher cursor slices of \c old do not exist
 	/// anymore.
 	/// \c cur is the new cursor, some slice points to this. Use the update
 	/// flags to cause a redraw.
@@ -301,14 +296,16 @@ public:
 	virtual bool setMouseHover(BufferView const *, bool) const
 		{ return false; }
 	/// return true if this inset is hovered (under mouse)
-	/// This is by now only used by mathed to draw corners 
+	/// This is by now only used by mathed to draw corners
 	/// (Inset::drawMarkers() and Inset::drawMarkers2()).
-	/// Other insets do not have to redefine this function to 
+	/// Other insets do not have to redefine this function to
 	/// return the correct status of mouseHovered.
 	virtual bool mouseHovered(BufferView const *) const { return false; }
 
+#ifdef	INCLUDE_ORIGINAL
 	/// request "external features"
 	virtual void validate(LaTeXFeatures &) const {}
+#endif	// INCLUDE_ORIGINAL
 
 	/// Validate LFUN_INSET_MODIFY argument.
 	virtual bool validateModifyArgument(docstring const &) const { return true; }
@@ -326,22 +323,23 @@ public:
 	virtual int plaintext(odocstream &, OutputParams const &) const = 0;
 	/// docbook output
 	virtual int docbook(odocstream & os, OutputParams const &) const;
+#ifdef	INCLUDE_ORIGINAL
 	/// XHTML output
 	/// the inset is expected to write XHTML to the XHTMLStream
 	/// \return any "deferred" material that should be written outside the
 	/// normal stream, and which will in fact be written after the current
 	/// paragraph closes. this is appropriate e.g. for floats.
 	virtual docstring xhtml(XHTMLStream & xs, OutputParams const &) const;
+#endif	// INCLUDE_ORIGINAL
 
 	/// Writes a string representation of the inset to the odocstream.
 	/// This one should be called when you want the whole contents of
 	/// the inset.
 	virtual void toString(odocstream &) const {}
-#endif	// INCLUDE_ORIGINAL
 	/// Appends a potentially abbreviated version of the inset to
 	/// \param str. Intended for use by the TOC.
 	virtual void forToc(docstring & str,
-	                    size_t maxlen = TOC_ENTRY_LENGTH) const;
+						size_t maxlen = TOC_ENTRY_LENGTH) const;
 
 	/// can the contents of the inset be edited on screen ?
 	// true for InsetCollapsables (not ButtonOnly) (not InsetInfo), InsetText
@@ -369,7 +367,7 @@ public:
 	/// Returns true if the inset supports inline completions at the
 	/// cursor position. In this case the completion might be stored
 	/// in the BufferView's inlineCompletion property.
-	virtual bool inlineCompletionSupported(Cursor const & /*cur*/) const 
+	virtual bool inlineCompletionSupported(Cursor const & /*cur*/) const
 		{ return false; }
 	/// Return true if the inline completion should be automatic.
 	virtual bool automaticInlineCompletion() const { return true; }
@@ -380,7 +378,7 @@ public:
 	/// Returns completion suggestions at cursor position. Return an
 	/// null pointer if no completion is a available or possible.
 	/// The caller is responsible to free the returned object!
-	virtual CompletionList const * createCompletionList(Cursor const &) const 
+	virtual CompletionList const * createCompletionList(Cursor const &) const
 		{ return 0; }
 	/// Returns the completion prefix to filter the suggestions for completion.
 	/// This is only called if completionList returned a non-null list.
@@ -389,16 +387,17 @@ public:
 	/// The completion does not contain the prefix. If finished is true, the
 	/// completion is final. If finished is false, completion might only be
 	/// a partial completion.
-	virtual bool insertCompletion(Cursor & /*cur*/, 
-		docstring const & /*completion*/, bool /*finished*/) 
+	virtual bool insertCompletion(Cursor & /*cur*/,
+		docstring const & /*completion*/, bool /*finished*/)
 		{ return false; }
 	/// Get the completion inset position and size
-	virtual void completionPosAndDim(Cursor const &, int & /*x*/, int & /*y*/, 
+	virtual void completionPosAndDim(Cursor const &, int & /*x*/, int & /*y*/,
 		Dimension & /*dim*/) const {}
+#endif	// INCLUDE_ORIGINAL
 
 	/// returns true if the inset can hold an inset of given type
 	virtual bool insetAllowed(InsetCode) const { return false; }
-	/// should this inset use the empty layout by default rather than 
+	/// should this inset use the empty layout by default rather than
 	/// the standard layout? (default: only if that is forced.)
 	virtual bool usePlainLayout() const { return forcePlainLayout(); }
 	/// if this inset has paragraphs should they be forced to use the
@@ -414,11 +413,10 @@ public:
 	/// Is the content of this inset part of the output document?
 	virtual bool producesOutput() const { return true; }
 
-#endif	// INCLUDE_ORIGINAL
 	/// \return Tool tip for this inset.
 	/// This default implementation returns an empty string.
 	virtual docstring toolTip(BufferView const & bv, int x, int y) const;
-	
+
 	/// \return Context menu identifier. This function determines
 	/// whose Inset's menu should be shown for the given position.
 	virtual std::string contextMenu(BufferView const & bv, int x, int y) const;

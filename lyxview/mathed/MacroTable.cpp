@@ -19,7 +19,7 @@
 #include "InsetMathNest.h"
 
 #include "Buffer.h"
-#include "DocIterator.h"
+#include <lyxview/logic/DocIterator.h>
 #include "InsetList.h"
 #include "Text.h"
 

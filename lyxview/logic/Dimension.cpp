@@ -10,7 +10,7 @@
 
 #include <lyxview/config.h>
 
-#include "Dimension.h"
+#include <lyxview/logic/Dimension.h>
 
 namespace lyx {
 

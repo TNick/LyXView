@@ -12,7 +12,8 @@
 #ifndef MATH_XYMATRIX_H
 #define MATH_XYMATRIX_H
 
-#include "Length.h"
+#include <lyxview/metrics/Length.h>
+
 #include "InsetMathGrid.h"
 
 

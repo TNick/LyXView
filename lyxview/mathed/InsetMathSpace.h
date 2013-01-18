@@ -13,7 +13,8 @@
 #define MATH_SPACEINSET_H
 
 #include "InsetMath.h"
-#include "Length.h"
+#include <lyxview/metrics/Length.h>
+
 
 
 namespace lyx {

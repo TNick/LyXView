@@ -15,10 +15,10 @@
 #ifndef MATH_DATA_H
 #define MATH_DATA_H
 
-#include "Dimension.h"
+#include <lyxview/logic/Dimension.h>
 #include "MathAtom.h"
 
-#include "OutputEnums.h"
+#include <lyxview/output/OutputEnums.h>
 
 #include <lyxview/support/strfwd.h>
 
@@ -165,7 +165,7 @@ public:
 	///
 	void swap(MathData & ar) { base_type::swap(ar); }
 
-	/// attach/detach arguments to macros, updating the cur to 
+	/// attach/detach arguments to macros, updating the cur to
 	/// stay visually at the same position (cur==0 is allowed)
 	void updateMacros(Cursor * cur, MacroContext const & mc, UpdateType);
 	///
@@ -187,18 +187,18 @@ private:
 	///
 	void detachMacroParameters(DocIterator * dit, const size_type macroPos);
 	///
-	void attachMacroParameters(Cursor * cur, const size_type macroPos, 
+	void attachMacroParameters(Cursor * cur, const size_type macroPos,
 		const size_type macroNumArgs, const int macroOptionals,
 		const bool fromInitToNormalMode, const bool interactiveInit,
 		const size_t appetite);
 	///
-	void collectOptionalParameters(Cursor * cur, 
-		const size_type numOptionalParams, std::vector<MathData> & params, 
+	void collectOptionalParameters(Cursor * cur,
+		const size_type numOptionalParams, std::vector<MathData> & params,
 		size_t & pos, MathAtom & scriptToPutAround,
 		const pos_type macroPos, const int thisPos, const int thisSlice);
 	///
-	void collectParameters(Cursor * cur, 
-		const size_type numParams, std::vector<MathData> & params, 
+	void collectParameters(Cursor * cur,
+		const size_type numParams, std::vector<MathData> & params,
 		size_t & pos, MathAtom & scriptToPutAround,
 		const pos_type macroPos, const int thisPos, const int thisSlice,
 		const size_t appetite);

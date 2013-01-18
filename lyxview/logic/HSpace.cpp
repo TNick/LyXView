@@ -17,7 +17,8 @@
 #include "BufferParams.h"
 #include "BufferView.h"
 #include "support/gettext.h"
-#include "Length.h"
+#include <lyxview/metrics/Length.h>
+
 #include "Text.h"
 
 #include "support/lstrings.h"

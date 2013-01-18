@@ -14,7 +14,7 @@
 // It seems that MacOSX define the check macro.
 #undef check
 
-#include "Dimension.h"
+#include <lyxview/logic/Dimension.h>
 
 #include <lyxview/support/types.h>
 

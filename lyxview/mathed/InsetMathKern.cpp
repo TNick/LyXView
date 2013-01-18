@@ -14,7 +14,7 @@
 #include "MathStream.h"
 #include "MathStream.h"
 #include "MathSupport.h"
-#include "Dimension.h"
+#include <lyxview/logic/Dimension.h>
 
 #include <lyxview/support/docstring.h>
 

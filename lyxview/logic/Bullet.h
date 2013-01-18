@@ -13,7 +13,7 @@
 #ifndef BULLET_H
 #define BULLET_H
 
-#include "support/docstring.h"
+#include <lyxview/support/docstring.h>
 
 
 namespace lyx {
@@ -88,8 +88,8 @@ private:
 	// the predefined arrays of LaTeX equivalent strings.
 
 	/** flag indicates if user has control of text (1)
-	    or if I can use it to generate strings (0)
-	    or have already (-1)
+		or if I can use it to generate strings (0)
+		or have already (-1)
 	*/
 	mutable short user_text;
 
@@ -97,8 +97,8 @@ private:
 	//      like this should ensure they are in a single cache line
 
 	/** text may contain a user-defined LaTeX symbol command
-	    or one generated internally from the font, character
-	    and size settings.
+		or one generated internally from the font, character
+		and size settings.
 	*/
 	mutable docstring text;
 };

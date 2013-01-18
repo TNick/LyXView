@@ -208,7 +208,7 @@ Buffer & Inset::buffer()
 					<< " name: " << iname);
 		s << "LyX Code: " << lyxCode() << " name: " << iname;
 		LASSERT(false, /**/);
-		throw ExceptionMessage(BufferException, 
+		throw ExceptionMessage(BufferException,
 			from_ascii("Inset::buffer_ member not initialized!"), s.str());
 	}
 	return *buffer_;
@@ -228,7 +228,7 @@ bool Inset::isBufferLoaded() const
 
 bool Inset::isBufferValid() const
 {
-	return buffer_ 
+	return buffer_
 		&& (isBufferLoaded() || buffer_->isClone());
 }
 
@@ -240,7 +240,7 @@ docstring Inset::layoutName() const
 }
 
 
-bool Inset::isFreeSpacing() const 
+bool Inset::isFreeSpacing() const
 {
 	return getLayout().isFreeSpacing();
 }
@@ -305,14 +305,14 @@ InsetCode insetCode(string const & name)
 }
 
 
-string insetName(InsetCode c) 
+string insetName(InsetCode c)
 {
 	build_translator();
 	return insetnames[c].name;
 }
 
 
-docstring insetDisplayName(InsetCode c) 
+docstring insetDisplayName(InsetCode c)
 {
 	build_translator();
 	return insetnames[c].display_name;
@@ -323,8 +323,8 @@ void Inset::dispatch(Cursor & cur, FuncRequest & cmd)
 {
 	if (buffer_ == 0) {
 		lyxerr << "Unassigned buffer_ member in Inset::dispatch()" << std::endl;
-		lyxerr << "LyX Code: " << lyxCode() << " name: " 
-		       << insetName(lyxCode()) << std::endl;
+		lyxerr << "LyX Code: " << lyxCode() << " name: "
+			   << insetName(lyxCode()) << std::endl;
 	} else if (cur.buffer() != buffer_)
 		lyxerr << "cur.buffer() != buffer_ in Inset::dispatch()" << std::endl;
 	cur.screenUpdateFlags(Update::Force | Update::FitCursor);
@@ -363,7 +363,7 @@ void Inset::doDispatch(Cursor & cur, FuncRequest &cmd)
 		// if the derived inset did not explicitly handle mouse_release,
 		// we assume we request the settings dialog
 		if (!cur.selection() && cmd.button() == mouse_button::button1
-		    && clickable(cmd.x(), cmd.y()) && hasSettings()) {
+			&& clickable(cmd.x(), cmd.y()) && hasSettings()) {
 			FuncRequest tmpcmd(LFUN_INSET_SETTINGS);
 			dispatch(cur, tmpcmd);
 		}
@@ -402,7 +402,7 @@ bool Inset::getStatus(Cursor &, FuncRequest const & cmd,
 		// This needs to be handled in the doDispatch method of our
 		// instantiatable children.
 		// FIXME: Why don't we let the insets determine whether this
-		// should be enabled or not ? Now we need this check for 
+		// should be enabled or not ? Now we need this check for
 		// the tabular features. (vfr)
 		if (cmd.getArg(0) == "tabular")
 			return false;
@@ -424,7 +424,7 @@ bool Inset::getStatus(Cursor &, FuncRequest const & cmd,
 		} else {
 			return false;
 		}
-	
+
 	case LFUN_IN_MATHMACROTEMPLATE:
 		// By default we're not in a MathMacroTemplate inset
 		flag.setEnabled(false);
@@ -510,7 +510,6 @@ bool Inset::autoDelete() const
 	return false;
 }
 
-#ifdef	INCLUDE_ORIGINAL
 
 void Inset::cursorPos(BufferView const & /*bv*/, CursorSlice const &,
 		bool, int & x, int & y) const
@@ -593,8 +592,6 @@ bool Inset::covers(BufferView const & bv, int x, int y) const
 	return bv.coordCache().getInsets().covers(this, x, y);
 }
 
-#endif	// INCLUDE_ORIGINAL
-
 InsetLayout const & Inset::getLayout() const
 {
 	if (!buffer_)
@@ -654,7 +651,7 @@ Buffer const * Inset::updateFrontend() const
 }
 
 
-docstring Inset::completionPrefix(Cursor const &) const 
+docstring Inset::completionPrefix(Cursor const &) const
 {
 	return docstring();
 }

@@ -13,7 +13,8 @@
 #ifndef HSPACE_H
 #define HSPACE_H
 
-#include "Length.h"
+#include <lyxview/metrics/Length.h>
+
 
 
 namespace lyx {

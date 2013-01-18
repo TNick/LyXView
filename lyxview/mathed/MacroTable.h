@@ -13,7 +13,7 @@
 #ifndef MATH_MACROTABLE_H
 #define MATH_MACROTABLE_H
 
-#include "DocIterator.h"
+#include <lyxview/logic/DocIterator.h>
 
 #include <lyxview/support/docstring.h>
 #include <lyxview/support/types.h>

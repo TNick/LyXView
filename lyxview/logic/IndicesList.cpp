@@ -11,7 +11,7 @@
 #include <lyxview/config.h>
 
 #include "IndicesList.h"
-#include "Color.h"
+#include <lyxview/logic/Color.h>
 
 #include "frontends/Application.h"
 

@@ -17,7 +17,7 @@
 #include "MathStream.h"
 #include <lyxview/metrics/MetricsInfo.h>
 
-#include "Dimension.h"
+#include <lyxview/logic/Dimension.h>
 #include "Encoding.h"
 #include "LaTeXFeatures.h"
 #include "TextPainter.h"

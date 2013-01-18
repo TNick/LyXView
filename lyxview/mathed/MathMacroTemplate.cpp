@@ -13,7 +13,7 @@
 
 #include "MathMacroTemplate.h"
 
-#include "DocIterator.h"
+#include <lyxview/logic/DocIterator.h>
 #include "LaTeXFeatures.h"
 #include "InsetMathBrace.h"
 #include "InsetMathChar.h"
@@ -28,7 +28,7 @@
 
 #include "Buffer.h"
 #include "BufferView.h"
-#include "Color.h"
+#include <lyxview/logic/Color.h>
 #include "Cursor.h"
 #include "DispatchResult.h"
 #include "FuncRequest.h"
